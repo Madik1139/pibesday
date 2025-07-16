@@ -169,27 +169,28 @@ function App() {
 			<div className="balloons-container" id="balloons-container"></div>
 
 			<div className="container">
-				<h1>✨ Selamat Ulang Tahun ke-21! ✨</h1>
-				<div className="subtitle">Nadia Tersayang</div>
+				<h1>✨ Selamat Ulang Tahun ke-15! ✨</h1>
+				<div className="subtitle">Emie Nurlatifah Maharani</div>
 
 				<div className="cake">🎂</div>
 
 				<p className="message">
-					Di hari yang istimewa ini, aku mau mengucapkan selamat ulang tahun
-					yang ke-21 untukmu.
-					<span className="heart">❤️</span> Terima kasih telah menjadi bagian
-					terindah dalam hidupku. Semoga di usia barumu ini kamu selalu
+					Di hari yang istimewa ini, mas mu yang ganteng ini mau mengucapkan selamat ulang tahun
+					yang ke-15 untuk adek tersayang.
+					<span className="heart">❤️</span> Terima kasih sudah menjadi adek
+					yang baik dan menyenangkan. Semoga di usia barumu ini kamu selalu
 					diberikan
 					<span className="highlight">
 						{" "}
 						kesehatan, kebahagiaan, dan kesuksesan{" "}
 					</span>
-					dalam semua hal yang kamu lakukan. Aku selalu mendoakan yang terbaik
-					untukmu.
+					dalam belajar dan semua aktivitasmu. Mas mu selalu mendukung dan 
+					mendoakan yang terbaik untukmu.
 				</p>
 
 				<p className="message">
-					Semoga semua impian dan harapanmu dapat terwujud.
+					Semoga semua cita-cita dan impianmu dapat terwujud, dan kamu tumbuh
+					menjadi anak yang semakin pintar dan baik hati.
 					<span className="heart">❤️</span>
 				</p>
 
@@ -235,7 +236,7 @@ function App() {
 				</div>
 
 				<p className="signature">
-					Dengan penuh cinta, <br />
+					Dengan penuh sayang, <br />
 					Mas Dika
 				</p>
 
