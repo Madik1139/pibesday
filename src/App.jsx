@@ -18,7 +18,7 @@ function App() {
 
   const createBalloons = () => {
     const container = document.getElementById("balloons-container");
-    const colors = ["#ffb6c1", "#e2d1f9", "#d1e8f9", "#d1f9ea"];
+    const colors = ["#ffb6c1", "#e2d1f9", "#d1e8f9", "#d1f9ea", "#ffcccb"];
 
     for (let i = 0; i < 20; i++) {
       const balloon = document.createElement("div");
