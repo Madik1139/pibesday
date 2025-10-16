@@ -185,7 +185,7 @@ function App() {
 
         <p className="message">
           Di hari spesial ini, pacar kamu yang ganteng ini mau mengucapkan
-          selamat ulang tahun untuk pacarku tercinta
+          selamat ulang tahun untuk pacar tercinta
           <span className="heart">❤️</span>. Makasih udah jadi pacar aku yang
           baik, penyayang dan selalu mau nyempetin waktu buat aku. Makasih udah
           tetap di sini walau banyak hal yang belum sempurna dari aku. Aku
@@ -206,7 +206,7 @@ function App() {
 
         <p className="signature">
           Dengan penuh cinta, <br />
-          Dika
+          Dika<span className="not-italic ">💕</span>
         </p>
 
         <div className="gallery">
@@ -223,18 +223,23 @@ function App() {
             <img className="photo" src="/foto 4.jpg" alt="foto 4" />
           </div>
           {[
-            "/foto 1.jpg",
-            "/foto 2.jpg",
-            "/foto 3.jpg",
-            "/foto 4.jpg",
+            "/foto 5.jpg",
+            "/foto 6.jpg",
+            "/foto 7.jpg",
+            "/foto 8.jpg",
             ...(showMorePhotos
-              ? ["/foto 5.jpg", "/foto 6.jpg", "/foto 7.jpg", "/foto 8.jpg"]
+              ? ["/foto 9.jpg", "/foto 10.jpg", "/foto 11.jpg", "/foto 12.jpg"]
               : []),
-          ].map((src, i) => (
-            <div className="photo-frame" key={i}>
-              <img className="photo" src={src} alt={`foto ${i + 1}`} />
-            </div>
-          ))}
+          ].map((src) => {
+            // Ambil nomor foto dari nama file
+            const match = src.match(/foto (\d+)\.jpg/);
+            const fotoNum = match ? match[1] : "";
+            return (
+              <div className="photo-frame" key={src}>
+                <img className="photo" src={src} alt={`foto ${fotoNum}`} />
+              </div>
+            );
+          })}
         </div>
         {!showMorePhotos && (
           <button
@@ -300,10 +305,12 @@ function App() {
               e.currentTarget.style.transform = "";
               e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.10)";
             }}
+            onClick={() => stopAudio()}
           >
             <span style={{ fontSize: "2rem" }}>💌</span>
             <span>
-              Mau baca ucapan yang dulu pernah aku kirim? <br /> Klik di sini!
+              Mau baca ucapan yang dulu pernah aku kirim? <br /> Klik di sini
+              sayangg
             </span>
             <span
               style={{
