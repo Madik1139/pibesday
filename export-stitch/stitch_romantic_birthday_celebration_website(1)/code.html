@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes pulseGlow{0%,100%{transform:scale(1);filter:drop-shadow(0 0 6px rgba(225,29,72,0.4));}50%{transform:scale(1.08);filter:drop-shadow(0 0 14px rgba(225,29,72,0.8));}}@keyframes waveBar{0%,100%{height:4px;}50%{height:14px;}}.animate-heart-glow{animation:pulseGlow 2.5s infinite ease-in-out;}.eq-bar-1{animation:waveBar 1s infinite ease-in-out;}.eq-bar-2{animation:waveBar 1.2s infinite ease-in-out 0.2s;}.eq-bar-3{animation:waveBar 0.9s infinite ease-in-out 0.4s;}
+/* Candle & Flame Animations */
+@keyframes flameFlicker {
+  0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.95; filter: drop-shadow(0 0 8px #ffb95f) drop-shadow(0 0 16px #e11d48); }
+  25% { transform: scale(1.06, 0.96) rotate(1.5deg); opacity: 1; filter: drop-shadow(0 0 12px #ffddb8) drop-shadow(0 0 22px #e11d48); }
+  50% { transform: scale(0.95, 1.05) rotate(-1.8deg); opacity: 0.88; filter: drop-shadow(0 0 9px #ffb95f) drop-shadow(0 0 14px #b80035); }
+  75% { transform: scale(1.03, 1) rotate(0.8deg); opacity: 0.98; filter: drop-shadow(0 0 14px #ffd8e7) drop-shadow(0 0 20px #e11d48); }
+}
+.candle-flame-active {
+  animation: flameFlicker 1.4s infinite ease-in-out;
+}
+@keyframes blowWind {
+  0% { transform: translateX(-120%) scaleY(0.7); opacity: 0; }
+  35% { opacity: 0.85; }
+  100% { transform: translateX(160%) scaleY(1.4); opacity: 0; }
+}
+.animate-wind-gust {
+  animation: blowWind 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+@keyframes smokeRise1 {
+  0% { transform: translate(0, 0) scale(0.4); opacity: 0.8; }
+  40% { transform: translate(-10px, -28px) scale(1) skewX(-12deg); opacity: 0.6; }
+  100% { transform: translate(-22px, -65px) scale(1.8) skewX(-20deg); opacity: 0; }
+}
+@keyframes smokeRise2 {
+  0% { transform: translate(0, 0) scale(0.3); opacity: 0.9; }
+  40% { transform: translate(8px, -30px) scale(1.1) skewX(10deg); opacity: 0.55; }
+  100% { transform: translate(18px, -70px) scale(2) skewX(18deg); opacity: 0; }
+}
+.smoke-trail-1 {
+  animation: smokeRise1 2.2s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+}
+.smoke-trail-2 {
+  animation: smokeRise2 2.5s cubic-bezier(0.2, 0.8, 0.4, 1) 0.15s forwards;
+}
+@keyframes flashGlowEffect {
+  0% { opacity: 0; transform: scale(0.96); }
+  30% { opacity: 0.55; transform: scale(1.02); }
+  100% { opacity: 0; transform: scale(1); }
+}
+.animate-cake-flash {
+  animation: flashGlowEffect 0.9s ease-out forwards;
+}
+@keyframes slideDownCard {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down-card {
+  animation: slideDownCard 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-tint": "#be0037", "on-background": "#400014", "error": "#ba1a1a", "secondary-container": "#fc79bd", "on-secondary-fixed-variant": "#85145a", "surface-container-highest": "#ffd9dd", "on-secondary": "#ffffff", "surface-dim": "#ffced4", "primary-fixed-dim": "#ffb3b6", "tertiary-container": "#a36700", "on-primary": "#ffffff", "primary-fixed": "#ffdada", "on-primary-fixed": "#40000c", "background": "#fff8f7", "on-secondary-container": "#76014e", "inverse-on-surface": "#ffecee", "surface-container": "#ffe9ea", "on-secondary-fixed": "#3d0026", "secondary": "#a43073", "on-surface": "#400014", "inverse-surface": "#670024", "on-tertiary-container": "#fffaf9", "error-container": "#ffdad6", "on-surface-variant": "#5c3f40", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "tertiary": "#815100", "surface-container-low": "#fff0f1", "surface-container-high": "#ffe1e4", "tertiary-fixed-dim": "#ffb95f", "outline": "#906f70", "on-tertiary-fixed": "#2a1700", "tertiary-fixed": "#ffddb8", "on-error": "#ffffff", "outline-variant": "#e5bdbe", "secondary-fixed-dim": "#ffafd3", "surface-variant": "#ffd9dd", "on-tertiary-fixed-variant": "#653e00", "primary": "#b80035", "primary-container": "#e11d48", "secondary-fixed": "#ffd8e7", "surface": "#fff8f7", "inverse-primary": "#ffb3b6", "on-primary-fixed-variant": "#920028", "on-tertiary": "#ffffff", "on-primary-container": "#fffaf9", "surface-bright": "#fff8f7" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-desktop": "1.5rem", "gutter-mobile": "1rem", "space-2xl": "3rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-xs": "0.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "space-3xl": "4.5rem", "space-2xs": "0.25rem", "space-sm": "0.75rem", "margin-desktop": "3rem" }, "fontFamily": { "body-md": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ], "body-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "title-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Playfair Display" ], "headline-lg-mobile": [ "Playfair Display" ], "display-lg-mobile": [ "Playfair Display" ], "display-lg": [ "Playfair Display" ], "title-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "500" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "title-lg": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "fontWeight": "600" } ], "display-lg-mobile": [ "38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "title-md": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_8px_32px_-4px_rgba(225,29,72,0.08)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center animate-heart-glow shadow-[0_0_16px_rgba(225,29,72,0.2)]"><span class="material-symbols-outlined text-primary text-[22px]">favorite</span></div><div class="flex flex-col"><span class="font-headline-md text-title-md text-primary tracking-tight leading-none">Forever &amp; Always</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase mt-0.5">Happy Birthday, Love</span></div></div><nav class="hidden lg:flex items-center gap-space-xs p-space-2xs bg-surface-container-low/80 rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-title-md rounded-full shadow-[0_4px_16px_rgba(225,29,72,0.25)]"><a aria-current="page" class="px-space-md py-space-xs transition-all duration-300 bg-primary-container text-on-primary-container font-title-md rounded-full shadow-[0_4px_16px_rgba(225,29,72,0.25)]" data-path="our-story" href="#">Beranda / Our Story</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" data-path="galeri-kenangan" href="#">Galeri Kenangan</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" data-path="harapan-dan-doa" href="#">Harapan &amp; Doa</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" data-path="kado-kejutan" href="#">Kado Kejutan</a></nav><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center gap-space-xs bg-surface-container px-space-sm py-space-2xs rounded-full shadow-[0_2px_12px_rgba(225,29,72,0.06)]"><span class="material-symbols-outlined text-primary text-[18px]">volunteer_activism</span><span class="font-label-sm text-label-sm text-on-surface font-medium">365 Hari Penuh Cinta</span></div><button aria-label="Toggle Romantic Music" class="flex items-center gap-space-2xs bg-surface-container-lowest hover:bg-surface-container px-space-sm py-space-xs rounded-full transition-all duration-300 shadow-[0_2px_8px_rgba(225,29,72,0.08)] group" type="button"><div class="flex items-end gap-[2px] h-4 w-3.5"><span class="w-1 bg-primary rounded-full eq-bar-1"></span><span class="w-1 bg-primary rounded-full eq-bar-2"></span><span class="w-1 bg-primary rounded-full eq-bar-3"></span></div><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors hidden md:inline">BGM</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(184,0,53,0.3)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full relative overflow-hidden">
+
+<!-- Ambient Glow Orbs -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-[40rem] right-[-5rem] w-80 h-80 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Main Container -->
+<div class="relative z-10 max-w-6xl mx-auto px-margin-mobile lg:px-margin-desktop w-full flex flex-col gap-space-3xl py-space-xl">
+<!-- HERO SECTION -->
+<section class="flex flex-col items-center text-center pt-space-md">
+<!-- Romantic Badge -->
+<div class="inline-flex items-center gap-space-2xs px-space-md py-space-xs rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-[0_4px_20px_rgba(225,29,72,0.12)] border-0 mb-space-lg transition-transform hover:scale-105 duration-300">
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_back_ios_new</span>
+<span class="font-label-md text-label-md text-primary tracking-wide">Hari Spesial Untuk Orang Paling Spesial</span>
+<span class="material-symbols-outlined text-primary text-[18px]">favorite</span>
+</div>
+<!-- Main Heading -->
+<h1 class="font-display-lg text-display-lg-mobile lg:text-display-lg text-on-surface max-w-4xl tracking-tight leading-none mb-space-md">
+        Selamat Ulang Tahun, <span class="bg-gradient-to-r from-primary via-primary-container to-secondary bg-clip-text text-transparent italic font-headline-lg">Sayangku!</span> 🎂✨
+      </h1>
+<!-- Emotional Sub-quote -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-space-xl">
+        Terima kasih telah hadir dan mewarnai duniaku dengan tawa riang, kehangatan pelukan, dan cinta yang tulus setiap harinya. Semesta begitu indah karena ada kamu di dalamnya.
+      </p>
+<!-- Action Pill Group & Days Tracker -->
+<div class="flex flex-wrap items-center justify-center gap-space-md mb-space-lg">
+<button class="group flex items-center gap-space-xs px-space-xl py-space-sm rounded-full bg-primary-container text-on-primary font-title-md text-title-md shadow-[0_8px_28px_rgba(225,29,72,0.35)] hover:shadow-[0_12px_36px_rgba(225,29,72,0.45)] hover:scale-105 active:scale-95 transition-all duration-300" id="btnOpenLetter" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:-rotate-12">drafts</span>
+<span>Buka Surat Cintaku</span>
+<span class="material-symbols-outlined text-[18px] opacity-70 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-space-sm rounded-full bg-surface-container-low/90 backdrop-blur-md text-on-surface font-title-md text-title-md shadow-[0_4px_16px_rgba(225,29,72,0.08)] hover:bg-surface-container-high hover:scale-105 active:scale-95 transition-all duration-300" id="btnPlayMelody" type="button">
+<span class="material-symbols-outlined text-primary text-[20px]" id="melodyIcon">music_note</span>
+<span id="melodyText">Dengarkan Melodi 🎵</span>
+</button>
+</div>
+<!-- Days Milestone Capsule -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-2xs rounded-full bg-surface-container/70 backdrop-blur-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Bersama sejak <span class="font-bold text-primary font-title-md text-label-md">730 Hari</span> yang lalu &amp; selamanya ✨</span>
+</div>
+</section>
+<!-- INTERACTIVE HIGHLIGHTS: BIRTHDAY CAKE & POLAROID -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Interactive Cake Card (Left Column) -->
+<div class="lg:col-span-6 flex flex-col p-space-lg rounded-xl bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_16px_48px_-8px_rgba(225,29,72,0.12)] transition-all hover:shadow-[0_20px_54px_-6px_rgba(225,29,72,0.18)] relative overflow-hidden" id="cakeCardContainer">
+<!-- Interactive Cake Screen Flash Overlay -->
+<div class="pointer-events-none absolute inset-0 bg-primary-fixed-dim/40 rounded-xl opacity-0 z-30 transition-opacity" id="cakeFlashGlow"></div>
+<div class="relative w-full aspect-square rounded-lg overflow-hidden bg-surface-container-high mb-space-md shadow-inner group select-none">
+<img alt="Kue Ulang Tahun Romantis dengan Lilin Cantik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA__CHzeV6KYoCq2aedkZPBuZh7iiy_N8o13Qm0GC7VplsrKteOtAVBn5gl0wYi7bkizdim7m6-8CvHDos58JRQXD9zoOMEZXa_cc_gZWGIQhYfW4Hs4gZ3jsDZPuSVPPBUABXyh1_4BoQEVy5tr2-LSVBwHPIqhyUPhi2SICty87GCo_5TXeMMCfJa7zdTJYGvwcauwkZwT9Al76a1ZXuRJ3Sb709amAM8vB6kf_F8qh1Nwn0TVFJL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+<!-- Realistic Candle Flame & Wick Elements (Top Center of Cake) -->
+<div class="absolute top-[37%] left-[49%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none z-20" id="candleFlameWrapper">
+<!-- Flame Core & Ambient Aura -->
+<div class="relative flex items-center justify-center candle-flame-active transition-all duration-500" id="candleFlameCore">
+<!-- Outer Warm Aura -->
+<div class="absolute w-14 h-14 rounded-full bg-tertiary-fixed-dim/35 blur-md pointer-events-none"></div>
+<div class="absolute w-20 h-20 rounded-full bg-primary-container/20 blur-xl pointer-events-none"></div>
+<!-- Tear drop flame -->
+<div class="relative w-4 h-7 bg-gradient-to-t from-amber-500 via-yellow-200 to-white rounded-[50%_50%_35%_35%] shadow-[0_0_12px_#ffb95f,0_0_24px_#e11d48]">
+<div class="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1.5 h-2.5 bg-blue-400 rounded-full blur-[1px] opacity-70"></div>
+</div>
+</div>
+<!-- Candle Wick (small line) -->
+<div class="w-[2px] h-2.5 bg-neutral-800 -mt-0.5 rounded-full shadow-sm" id="candleWick"></div>
+</div>
+<!-- Smoke Trails Container (Visible after candle is blown) -->
+<div class="absolute top-[37%] left-[49%] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-20 opacity-0 transition-opacity duration-300" id="candleSmokeTrails">
+<!-- Smoke Trail 1 -->
+<div class="w-3 h-8 bg-gradient-to-t from-white/70 via-gray-300/40 to-transparent rounded-full blur-[2px] smoke-trail-1 absolute -top-4 -left-1"></div>
+<!-- Smoke Trail 2 -->
+<div class="w-2.5 h-10 bg-gradient-to-t from-white/80 via-gray-200/50 to-transparent rounded-full blur-[2.5px] smoke-trail-2 absolute -top-6 left-0"></div>
+<div class="text-[10px] text-white/70 font-semibold uppercase tracking-widest -mt-2">puff~</div>
+</div>
+<!-- Wind Gust Visual Sweep Across Cake -->
+<div class="absolute inset-y-0 -left-10 w-44 bg-gradient-to-r from-transparent via-white/35 to-transparent skew-x-[-25deg] pointer-events-none opacity-0 z-30" id="windGustEffect"></div>
+<!-- Sparklers & Mini Confetti Burst Container Inside Cake Frame -->
+<div class="absolute inset-0 pointer-events-none z-25 overflow-hidden" id="cakeConfettiContainer"></div>
+<!-- Celebration Wish Banner -->
+<div class="absolute inset-0 pointer-events-none opacity-0 transition-all duration-700 flex items-center justify-center bg-black/25 backdrop-blur-[2px] z-30" id="candleSmoke">
+<div class="text-center px-space-md py-space-xs mx-4 rounded-full bg-surface-container-lowest/95 shadow-2xl text-primary font-title-md text-title-md transform scale-90 transition-transform duration-500 flex items-center gap-space-2xs border border-primary-fixed" id="wishBadge">
+<span class="material-symbols-outlined text-primary text-[20px] animate-spin" style="animation-duration: 4s;">sparkles</span>
+<span>✨ Harapanmu didengar semesta &amp; dikabulkan! 💖</span>
+</div>
+</div>
+<div class="absolute top-space-sm left-space-sm bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-space-2xs rounded-full shadow-sm flex items-center gap-space-2xs z-20">
+<span class="material-symbols-outlined text-primary text-[16px]">celebration</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider">Kue Spesial Untukmu</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-md text-title-lg text-on-surface">Tiup Lilin &amp; Ucapkan Doa</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Tutup matamu sejenak dan buat satu permintaan terindah.</p>
+</div>
+<button class="shrink-0 flex items-center gap-space-2xs px-space-md py-space-sm rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-[0_6px_20px_rgba(184,0,53,0.25)] hover:bg-primary-container active:scale-95 transition-all duration-300 hover:shadow-[0_8px_24px_rgba(184,0,53,0.4)]" id="btnBlowCandle" type="button">
+<span class="material-symbols-outlined text-[18px]" id="blowButtonIcon">air</span>
+<span id="blowButtonLabel">Tiup Lilin 🕯️</span>
+</button>
+</div>
+<div class="hidden mt-space-md p-space-md rounded-lg bg-surface-container-low text-on-surface transition-all border border-outline-variant/30" id="wishMessageContainer">
+<div class="flex items-center gap-space-2xs mb-space-2xs">
+<span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm font-bold text-primary uppercase tracking-wider">Doa Tulus Untukmu</span>
+</div>
+<p class="font-headline-md text-headline-md text-primary italic mb-space-2xs">"Semoga kamu selalu bahagia, dicintai, dan dikelilingi kedamaian."</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Aku berjanji akan selalu ada di setiap langkahmu, merayakan setiap tawa, dan menemani setiap mimpimu.</p>
+</div>
+</div>
+<!-- Cinematic Memory Polaroid Frame (Right Column) -->
+<div class="lg:col-span-6 flex flex-col items-center justify-center">
+<div class="relative w-full max-w-md bg-surface-container-lowest p-space-md pb-space-lg rounded-sm shadow-[0_20px_50px_-10px_rgba(64,0,20,0.18)] rotate-1 hover:rotate-0 transition-transform duration-500 ease-out">
+<!-- Washi Tape Ornament at Top -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-secondary-fixed/70 backdrop-blur-sm -rotate-2 shadow-sm pointer-events-none rounded-2xs"></div>
+<!-- Polaroid Picture -->
+<div class="w-full aspect-[4/5] bg-surface-container overflow-hidden rounded-2xs shadow-inner relative group">
+<img alt="Kenangan Manis Sunset Berdua di Pantai" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJhjURvHveKOEqfgJhw6-DHlZYDXu3J7mqJEeBwv7uakS3Erw7cqHF3fHqC6Azbbg6AxvkJArCbMukEaP7_dJby74iAyQIEwAPdh_OA1nOzRDuCoS7naNjOxd0eoKjaOjlEwKM9e1oTX7Vtp-4pHpGtVzcqBlGa7y62luLoDPgHKftk5hwHzhmFJsqNcb1JjMjIIDN01MPoNzWsPZQTpie1oiByJiQ8DfDCyEw_apWHyrLNd8tuyXg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-60"></div>
+</div>
+<!-- Handwritten Style Caption -->
+<div class="mt-space-md flex items-end justify-between px-space-2xs">
+<div>
+<p class="font-headline-md text-title-lg text-on-surface tracking-tight">sunset cuddles ♥ Aug '23</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant italic mt-space-2xs">Kenangan terindah saat matahari terbenam berdua</p>
+</div>
+<!-- Heart Like Micro-interaction -->
+<button class="flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-surface-container-high hover:bg-primary hover:text-on-primary transition-all duration-300 group" id="btnLikePolaroid" type="button">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-[18px]" id="heartIcon">favorite</span>
+<span class="font-label-md text-label-md font-bold" id="likeCounter">1,000</span>
+</button>
+</div>
+</div>
+<!-- Floating Note Pin -->
+<div class="-mt-4 z-20 flex items-center gap-space-xs bg-surface-container-highest/90 backdrop-blur-md px-space-md py-space-xs rounded-full shadow-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">pin_drop</span>
+<span class="font-label-sm text-label-sm">Pantai Kenangan Kita • Selamanya Terpatri</span>
+</div>
+</div>
+</section>
+<!-- LOVE NOTES & REASONS WHY I LOVE YOU (BENTO GRID) -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-col items-center text-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">Catatan dari Lubuk Hatiku</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-2xs">Tiga Alasan Kenapa Aku Begitu Mencintaimu</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Card 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest/80 backdrop-blur-lg shadow-[0_8px_32px_-4px_rgba(225,29,72,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(225,29,72,0.12)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[24px]">mood</span>
+</div>
+<h3 class="font-headline-md text-title-lg text-on-surface mb-space-xs">Senyum Manismu</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Duniaku yang paling penat sekalipun seketika tenang hanya dengan melihat lengkung senyumanmu. Tawa renyahmu adalah melodi paling merdu yang tak pernah bosan ku dengar.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-xs flex items-center gap-space-xs text-primary font-label-md text-label-md">
+<span>Alasan #01</span>
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest/80 backdrop-blur-lg shadow-[0_8px_32px_-4px_rgba(225,29,72,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(225,29,72,0.12)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-secondary mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[24px]">volunteer_activism</span>
+</div>
+<h3 class="font-headline-md text-title-lg text-on-surface mb-space-xs">Kebaikan Hatimu</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Caramu peduli pada hal-hal kecil, kelembutan tutur katamu, dan kehangatan jiwamu selalu membuatku tersadar betapa beruntungnya aku dipertemukan dengan malaikat sepertimu.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-xs flex items-center gap-space-xs text-secondary font-label-md text-label-md">
+<span>Alasan #02</span>
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest/80 backdrop-blur-lg shadow-[0_8px_32px_-4px_rgba(225,29,72,0.06)] hover:shadow-[0_16px_40px_-6px_rgba(225,29,72,0.12)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-tertiary mb-space-md shadow-sm">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+</div>
+<h3 class="font-headline-md text-title-lg text-on-surface mb-space-xs">Mimpi &amp; Masa Depan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Bersamamu, masa depan bukan lagi hal yang menakutkan, melainkan petualangan indah yang tak sabar ingin ku jalani hari demi hari bersamamu hingga menua nanti.
+            </p>
+</div>
+<div class="mt-space-lg pt-space-xs flex items-center gap-space-xs text-tertiary font-label-md text-label-md">
+<span>Alasan #03</span>
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE VIRTUAL GIFT BOX / SURPRISE SECTION -->
+<section class="flex flex-col items-center">
+<div class="w-full max-w-2xl rounded-2xl bg-gradient-to-b from-surface-container-high via-surface-container to-surface-container-low p-space-xl text-center shadow-[0_20px_50px_rgba(225,29,72,0.12)] relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-secondary-container/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="w-16 h-16 mx-auto rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-md mb-space-md">
+<span class="material-symbols-outlined text-[32px]">featured_seasonal_and_gifts</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Kejutan Hari Ulang Tahun</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-2xs mb-space-xs">Kado Rahasia Spesial Untukmu</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto mb-space-lg">
+          Ada sesuatu yang sudah lama ku simpan rapi di dalam kotak ini khusus untuk membahagiakan harimu.
+        </p>
+<!-- The Gift Reveal Interactive Trigger -->
+<div class="flex flex-col items-center gap-space-sm" id="giftClosedState">
+<button class="px-space-xl py-space-sm rounded-full bg-primary text-on-primary font-title-md text-title-md shadow-[0_8px_24px_rgba(184,0,53,0.35)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-space-xs" id="btnOpenGift" type="button">
+<span class="material-symbols-outlined text-[20px]">redeem</span>
+<span>Buka Kotak Hadiah 🎁</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Klik untuk membuka pita hadiah</span>
+</div>
+<!-- The Revealed Gift Ticket / Message -->
+<div class="hidden flex-col items-center animate-fade-in" id="giftOpenedState">
+<div class="w-full p-space-lg rounded-xl bg-surface-container-lowest shadow-xl text-left relative overflow-hidden">
+<div class="flex items-center justify-between gap-space-md mb-space-sm">
+<span class="font-label-sm text-label-sm px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold">GOLDEN VOUCHER OF LOVE</span>
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+</div>
+<h3 class="font-headline-md text-title-lg text-primary font-bold mb-space-2xs">
+              Tiket Liburan Berdua + Romantic Dinner Seumur Hidup! 💕
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              Voucher ini berlaku selamanya tanpa batas kedaluwarsa. Termasuk pelukan hangat tanpa batas, es krim kapan saja kamu mau, dan cinta tanpa syarat dariku selamanya.
+            </p>
+<div class="flex items-center justify-between text-on-surface font-label-sm text-label-sm bg-surface-container-low p-space-xs rounded-lg">
+<span>Diberikan khusus untuk: <strong>Kekasih Hatiku</strong></span>
+<span class="text-primary font-bold">100% UNLIMITED</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ROMANTIC LOVE LETTER MODAL / EMBEDDED POPUP -->
+<div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-margin-mobile" id="loveLetterModal">
+<div class="relative w-full max-w-xl bg-surface-container-lowest p-space-xl rounded-2xl shadow-2xl flex flex-col gap-space-md max-h-[85vh] overflow-y-auto">
+<button class="absolute top-space-md right-space-md w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors" id="btnCloseLetter" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<div class="flex items-center gap-space-2xs text-primary">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider">Surat Cinta Teruntuk Sayangku</span>
+</div>
+<h3 class="font-headline-lg text-headline-md text-on-surface">Selamat Menikmati Usia Baru, Cantik</h3>
+<div class="space-y-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<p>Hai cintaku,</p>
+<p>
+            Di hari bertambahnya usiamu ini, aku cuma mau mengucapkan terima kasih yang teramat besar. Terima kasih sudah kuat melewati setiap hari, terima kasih sudah selalu tersenyum manis saat bersamaku, dan terima kasih sudah memilihku untuk menjadi teman hidupmu.
+          </p>
+<p>
+            Semoga segala doamu yang belum terwujud dipermudah oleh Tuhan. Semoga langkahmu selalu dipayungi keberuntungan, kesehatan, serta kebahagiaan tanpa henti. Apapun yang terjadi di masa depan, jangan pernah merasa sendirian, karena tanganku akan selalu siap menggenggammu.
+          </p>
+<p class="font-headline-md text-title-lg text-primary italic pt-space-xs">
+            "I love you more than words could ever paint."
+          </p>
+<p class="text-right font-title-md text-on-surface pt-space-sm">
+            Dari seseorang yang mencintaimu selamanya,<br/>
+<span class="text-primary font-headline-md">Pasanganmu ♥</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Hearts Canvas Container (Script-driven) -->
+<div class="fixed inset-0 pointer-events-none z-40 overflow-hidden" id="heartsContainer"></div>
+<!-- Micro-interactions Javascript -->
+<script>
+    (function() {
+      // 1. Floating Hearts Engine
+      const heartsContainer = document.getElementById('heartsContainer');
+      function createHeart(x, y) {
+        if (!heartsContainer) return;
+        const heart = document.createElement('div');
+        heart.innerHTML = '&#10084;';
+        heart.style.position = 'absolute';
+        heart.style.left = (x || Math.random() * window.innerWidth) + 'px';
+        heart.style.top = (y || window.innerHeight) + 'px';
+        heart.style.color = Math.random() > 0.5 ? '#b80035' : '#e11d48';
+        heart.style.fontSize = (Math.random() * 20 + 14) + 'px';
+        heart.style.opacity = '0.85';
+        heart.style.pointerEvents = 'none';
+        heart.style.transition = 'transform 3.5s ease-out, opacity 3.5s ease-out';
+        heartsContainer.appendChild(heart);
+
+        setTimeout(() => {
+          heart.style.transform = `translate(${(Math.random() - 0.5) * 120}px, -${window.innerHeight * 0.7}px) scale(1.4)`;
+          heart.style.opacity = '0';
+        }, 30);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 3600);
+      }
+
+      // Spawn ambient hearts periodically
+      setInterval(() => {
+        createHeart();
+      }, 1200);
+
+      // Spawn on click anywhere (ignore button clicks to prevent double triggers)
+      window.addEventListener('click', (e) => {
+        if (e.target.closest('button')) return;
+        createHeart(e.clientX, e.clientY);
+        createHeart(e.clientX + 10, e.clientY - 10);
+      });
+
+      // 2. Tiup Lilin Cinematic Interactive Micro-interaction
+      const btnBlowCandle = document.getElementById('btnBlowCandle');
+      const candleSmoke = document.getElementById('candleSmoke');
+      const wishBadge = document.getElementById('wishBadge');
+      const wishMessageContainer = document.getElementById('wishMessageContainer');
+      const blowButtonLabel = document.getElementById('blowButtonLabel');
+      const blowButtonIcon = document.getElementById('blowButtonIcon');
+      const candleFlameWrapper = document.getElementById('candleFlameWrapper');
+      const candleFlameCore = document.getElementById('candleFlameCore');
+      const candleSmokeTrails = document.getElementById('candleSmokeTrails');
+      const windGustEffect = document.getElementById('windGustEffect');
+      const cakeFlashGlow = document.getElementById('cakeFlashGlow');
+      const cakeConfettiContainer = document.getElementById('cakeConfettiContainer');
+      
+      let isCandleBlown = false;
+
+      // Function to burst confetti and sparkles over cake
+      function triggerCakeSparkleCelebration() {
+        if (!cakeConfettiContainer) return;
+        cakeConfettiContainer.innerHTML = '';
+        const colors = ['#b80035', '#e11d48', '#ffb95f', '#ffd8e7', '#fc79bd', '#ffffff', '#ffdada'];
+        const shapes = ['❤️', '✨', '⭐', '🌸', '🎉', '💖'];
+
+        for (let i = 0; i < 40; i++) {
+          const particle = document.createElement('div');
+          const isSymbol = Math.random() > 0.45;
+          particle.style.position = 'absolute';
+          particle.style.left = '50%';
+          particle.style.top = '40%';
+          particle.style.pointerEvents = 'none';
+          particle.style.zIndex = '28';
+          particle.style.transition = 'all 1.4s cubic-bezier(0.12, 0.8, 0.32, 1)';
+
+          if (isSymbol) {
+            particle.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+            particle.style.fontSize = (Math.random() * 14 + 10) + 'px';
+          } else {
+            particle.style.width = (Math.random() * 8 + 5) + 'px';
+            particle.style.height = (Math.random() * 8 + 5) + 'px';
+            particle.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.boxShadow = '0 0 8px ' + colors[Math.floor(Math.random() * colors.length)];
+          }
+
+          cakeConfettiContainer.appendChild(particle);
+
+          // Random blast angle and distance
+          const angle = Math.random() * Math.PI * 2;
+          const velocity = Math.random() * 160 + 60;
+          const destX = Math.cos(angle) * velocity;
+          const destY = Math.sin(angle) * velocity - 30; // slightly upward bias
+          const rot = (Math.random() - 0.5) * 720;
+
+          requestAnimationFrame(() => {
+            particle.style.transform = `translate(${destX}px, ${destY}px) rotate(${rot}deg) scale(${Math.random() * 0.8 + 0.6})`;
+            particle.style.opacity = '1';
+          });
+
+          // Fade out particle
+          setTimeout(() => {
+            particle.style.opacity = '0';
+          }, 900);
+
+          setTimeout(() => {
+            particle.remove();
+          }, 1600);
+        }
+      }
+
+      if (btnBlowCandle) {
+        btnBlowCandle.addEventListener('click', () => {
+          if (!isCandleBlown) {
+            // == ACTION 1: TIUP LILIN ==
+            isCandleBlown = true;
+
+            // Trigger gentle wind gust
+            if (windGustEffect) {
+              windGustEffect.classList.remove('opacity-0');
+              windGustEffect.classList.add('animate-wind-gust');
+              setTimeout(() => {
+                windGustEffect.classList.remove('animate-wind-gust');
+                windGustEffect.classList.add('opacity-0');
+              }, 800);
+            }
+
+            // Flame bends and then extinguishes
+            if (candleFlameCore) {
+              candleFlameCore.style.transform = 'scale(0.3) skewX(-35deg) translateY(4px)';
+              candleFlameCore.style.opacity = '0.3';
+              setTimeout(() => {
+                candleFlameCore.classList.remove('candle-flame-active');
+                candleFlameCore.style.opacity = '0';
+                candleFlameCore.style.transform = 'scale(0)';
+              }, 300);
+            }
+
+            // Smoke trails ascend
+            setTimeout(() => {
+              if (candleSmokeTrails) {
+                candleSmokeTrails.classList.remove('opacity-0');
+                candleSmokeTrails.classList.add('opacity-100');
+                setTimeout(() => {
+                  candleSmokeTrails.classList.remove('opacity-100');
+                  candleSmokeTrails.classList.add('opacity-0');
+                }, 2800);
+              }
+            }, 350);
+
+            // Flash glow around cake container
+            if (cakeFlashGlow) {
+              cakeFlashGlow.classList.add('animate-cake-flash');
+              setTimeout(() => {
+                cakeFlashGlow.classList.remove('animate-cake-flash');
+              }, 950);
+            }
+
+            // Confetti burst & Sparkles
+            setTimeout(() => {
+              triggerCakeSparkleCelebration();
+            }, 250);
+
+            // Celebration Badge Reveal with Zoom & Bounce
+            setTimeout(() => {
+              if (candleSmoke && wishBadge) {
+                candleSmoke.classList.remove('opacity-0');
+                candleSmoke.classList.add('opacity-100');
+                wishBadge.classList.remove('scale-90');
+                wishBadge.classList.add('scale-100', 'animate-bounce');
+              }
+            }, 300);
+
+            // Open romantic wish card below with smooth animation
+            setTimeout(() => {
+              if (wishMessageContainer) {
+                wishMessageContainer.classList.remove('hidden');
+                wishMessageContainer.classList.add('animate-slide-down-card');
+              }
+            }, 550);
+
+            // Update button label & style to 'Lilin Berhasil Ditiup! 🎉'
+            blowButtonLabel.textContent = 'Lilin Berhasil Ditiup! 🎉';
+            if (blowButtonIcon) blowButtonIcon.textContent = 'celebration';
+            btnBlowCandle.classList.remove('bg-primary');
+            btnBlowCandle.classList.add('bg-tertiary-container', 'ring-2', 'ring-tertiary-fixed');
+
+            // Shower ambient screen hearts
+            for (let i = 0; i < 18; i++) {
+              setTimeout(() => createHeart(), i * 65);
+            }
+
+            // Set a tooltip to notify user they can relight
+            btnBlowCandle.setAttribute('title', 'Klik untuk menyalakan lilin kembali');
+
+          } else {
+            // == ACTION 2: NYALAKAN LILIN KEMBALI (REPLAY) ==
+            isCandleBlown = false;
+
+            // Relight flame with growing flicker
+            if (candleFlameCore) {
+              candleFlameCore.classList.add('candle-flame-active');
+              candleFlameCore.style.transform = 'scale(1)';
+              candleFlameCore.style.opacity = '1';
+            }
+
+            // Hide smoke & celebration banner
+            if (candleSmoke && wishBadge) {
+              wishBadge.classList.remove('animate-bounce');
+              candleSmoke.classList.remove('opacity-100');
+              candleSmoke.classList.add('opacity-0');
+            }
+
+            // Reset button
+            blowButtonLabel.textContent = 'Tiup Lilin 🕯️';
+            if (blowButtonIcon) blowButtonIcon.textContent = 'air';
+            btnBlowCandle.classList.remove('bg-tertiary-container', 'ring-2', 'ring-tertiary-fixed');
+            btnBlowCandle.classList.add('bg-primary');
+            btnBlowCandle.removeAttribute('title');
+          }
+        });
+      }
+
+      // 3. Like Counter Polaroid
+      const btnLikePolaroid = document.getElementById('btnLikePolaroid');
+      const likeCounter = document.getElementById('likeCounter');
+      let count = 1000;
+      let liked = false;
+
+      if (btnLikePolaroid && likeCounter) {
+        btnLikePolaroid.addEventListener('click', () => {
+          if (!liked) {
+            count += 1;
+            likeCounter.textContent = count.toLocaleString();
+            liked = true;
+            btnLikePolaroid.classList.add('bg-primary', 'text-on-primary');
+            createHeart(window.innerWidth / 2, window.innerHeight / 2);
+          }
+        });
+      }
+
+      // 4. Gift Box Reveal
+      const btnOpenGift = document.getElementById('btnOpenGift');
+      const giftClosedState = document.getElementById('giftClosedState');
+      const giftOpenedState = document.getElementById('giftOpenedState');
+
+      if (btnOpenGift) {
+        btnOpenGift.addEventListener('click', () => {
+          giftClosedState.classList.add('hidden');
+          giftOpenedState.classList.remove('hidden');
+          giftOpenedState.classList.add('flex');
+          for(let i=0; i<20; i++) {
+            setTimeout(() => createHeart(), i * 60);
+          }
+        });
+      }
+
+      // 5. Surat Cinta Modal
+      const btnOpenLetter = document.getElementById('btnOpenLetter');
+      const loveLetterModal = document.getElementById('loveLetterModal');
+      const btnCloseLetter = document.getElementById('btnCloseLetter');
+
+      if (btnOpenLetter && loveLetterModal && btnCloseLetter) {
+        btnOpenLetter.addEventListener('click', () => {
+          loveLetterModal.classList.remove('hidden');
+          loveLetterModal.classList.add('flex');
+        });
+
+        btnCloseLetter.addEventListener('click', () => {
+          loveLetterModal.classList.add('hidden');
+          loveLetterModal.classList.remove('flex');
+        });
+
+        loveLetterModal.addEventListener('click', (e) => {
+          if (e.target === loveLetterModal) {
+            loveLetterModal.classList.add('hidden');
+            loveLetterModal.classList.remove('flex');
+          }
+        });
+      }
+
+      // 6. Melody Toggle Simulation
+      const btnPlayMelody = document.getElementById('btnPlayMelody');
+      const melodyText = document.getElementById('melodyText');
+      const melodyIcon = document.getElementById('melodyIcon');
+      let isPlaying = false;
+
+      if (btnPlayMelody) {
+        btnPlayMelody.addEventListener('click', () => {
+          isPlaying = !isPlaying;
+          if (isPlaying) {
+            melodyText.textContent = 'Memutar Lagu Romantis 🎶';
+            melodyIcon.textContent = 'graphic_eq';
+            btnPlayMelody.classList.add('bg-surface-container-highest');
+          } else {
+            melodyText.textContent = 'Dengarkan Melodi 🎵';
+            melodyIcon.textContent = 'music_note';
+            btnPlayMelody.classList.remove('bg-surface-container-highest');
+          }
+        });
+      }
+
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-3xl py-space-2xl"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop flex flex-col items-center justify-center gap-space-sm text-center"><div class="flex items-center gap-space-2xs text-primary"><span class="material-symbols-outlined text-[20px]">favorite</span><span class="font-headline-md text-title-md">Dibuat dengan segenap cinta &amp; kasih</span><span class="material-symbols-outlined text-[20px]">favorite</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-lg">Merayakan setiap detik, tawa, dan kenangan indah bersamamu. Semoga hari spesial ini seindah senyumanmu.</p><p class="font-label-sm text-label-sm text-on-surface-variant/80 mt-space-xs">© 2024 Love Letter Edition • Selamanya Untukmu</p></div></footer></body></html>

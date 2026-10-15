@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@keyframes pulseGlow{0%,100%{transform:scale(1);filter:drop-shadow(0 0 6px rgba(225,29,72,0.4));}50%{transform:scale(1.08);filter:drop-shadow(0 0 14px rgba(225,29,72,0.8));}}@keyframes waveBar{0%,100%{height:4px;}50%{height:14px;}}.animate-heart-glow{animation:pulseGlow 2.5s infinite ease-in-out;}.eq-bar-1{animation:waveBar 1s infinite ease-in-out;}.eq-bar-2{animation:waveBar 1.2s infinite ease-in-out 0.2s;}.eq-bar-3{animation:waveBar 0.9s infinite ease-in-out 0.4s;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-tint": "#be0037", "on-background": "#400014", "error": "#ba1a1a", "secondary-container": "#fc79bd", "on-secondary-fixed-variant": "#85145a", "surface-container-highest": "#ffd9dd", "on-secondary": "#ffffff", "surface-dim": "#ffced4", "primary-fixed-dim": "#ffb3b6", "tertiary-container": "#a36700", "on-primary": "#ffffff", "primary-fixed": "#ffdada", "on-primary-fixed": "#40000c", "background": "#fff8f7", "on-secondary-container": "#76014e", "inverse-on-surface": "#ffecee", "surface-container": "#ffe9ea", "on-secondary-fixed": "#3d0026", "secondary": "#a43073", "on-surface": "#400014", "inverse-surface": "#670024", "on-tertiary-container": "#fffaf9", "error-container": "#ffdad6", "on-surface-variant": "#5c3f40", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "tertiary": "#815100", "surface-container-low": "#fff0f1", "surface-container-high": "#ffe1e4", "tertiary-fixed-dim": "#ffb95f", "outline": "#906f70", "on-tertiary-fixed": "#2a1700", "tertiary-fixed": "#ffddb8", "on-error": "#ffffff", "outline-variant": "#e5bdbe", "secondary-fixed-dim": "#ffafd3", "surface-variant": "#ffd9dd", "on-tertiary-fixed-variant": "#653e00", "primary": "#b80035", "primary-container": "#e11d48", "secondary-fixed": "#ffd8e7", "surface": "#fff8f7", "inverse-primary": "#ffb3b6", "on-primary-fixed-variant": "#920028", "on-tertiary": "#ffffff", "on-primary-container": "#fffaf9", "surface-bright": "#fff8f7" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-desktop": "1.5rem", "gutter-mobile": "1rem", "space-2xl": "3rem", "margin-mobile": "1.25rem", "space-md": "1rem", "space-xs": "0.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "space-3xl": "4.5rem", "space-2xs": "0.25rem", "space-sm": "0.75rem", "margin-desktop": "3rem" }, "fontFamily": { "body-md": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-md": [ "Playfair Display" ], "body-lg": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "title-lg": [ "Plus Jakarta Sans" ], "headline-lg": [ "Playfair Display" ], "headline-lg-mobile": [ "Playfair Display" ], "display-lg-mobile": [ "Playfair Display" ], "display-lg": [ "Playfair Display" ], "title-md": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "500" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "500" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "600" } ], "title-lg": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "headline-lg": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "36px", "fontWeight": "600" } ], "display-lg-mobile": [ "38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "title-md": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_8px_32px_-4px_rgba(225,29,72,0.08)]"><div class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center animate-heart-glow shadow-[0_0_16px_rgba(225,29,72,0.2)]"><span class="material-symbols-outlined text-primary text-[22px]">favorite</span></div><div class="flex flex-col"><span class="font-headline-md text-title-md text-primary tracking-tight leading-none">Forever &amp; Always</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase mt-0.5">Happy Birthday, Love</span></div></div><nav class="hidden lg:flex items-center gap-space-xs p-space-2xs bg-surface-container-low/80 rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-title-md rounded-full shadow-[0_4px_16px_rgba(225,29,72,0.25)]"><a aria-current="page" class="px-space-md py-space-xs transition-all duration-300 bg-primary-container text-on-primary-container font-title-md rounded-full shadow-[0_4px_16px_rgba(225,29,72,0.25)]" data-path="our-story" href="#">Beranda / Our Story</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" data-path="galeri-kenangan" href="#">Galeri Kenangan</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" data-path="harapan-dan-doa" href="#">Harapan &amp; Doa</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" data-path="kado-kejutan" href="#">Kado Kejutan</a></nav><div class="flex items-center gap-space-sm"><div class="hidden sm:flex items-center gap-space-xs bg-surface-container px-space-sm py-space-2xs rounded-full shadow-[0_2px_12px_rgba(225,29,72,0.06)]"><span class="material-symbols-outlined text-primary text-[18px]">volunteer_activism</span><span class="font-label-sm text-label-sm text-on-surface font-medium">365 Hari Penuh Cinta</span></div><button aria-label="Toggle Romantic Music" class="flex items-center gap-space-2xs bg-surface-container-lowest hover:bg-surface-container px-space-sm py-space-xs rounded-full transition-all duration-300 shadow-[0_2px_8px_rgba(225,29,72,0.08)] group" type="button"><div class="flex items-end gap-[2px] h-4 w-3.5"><span class="w-1 bg-primary rounded-full eq-bar-1"></span><span class="w-1 bg-primary rounded-full eq-bar-2"></span><span class="w-1 bg-primary rounded-full eq-bar-3"></span></div><span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-primary transition-colors hidden md:inline">BGM</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(184,0,53,0.3)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glows -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-96 -right-24 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-[1200px] -left-20 w-80 h-80 bg-tertiary-fixed/40 rounded-full blur-3xl pointer-events-none"></div>
+<!-- TOP SECTION: Breadcrumb & Title Banner -->
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop pt-space-lg pb-space-md">
+<!-- Breadcrumb & Mission Pill -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<a class="inline-flex items-center gap-space-2xs font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors bg-surface-container-low px-space-sm py-space-2xs rounded-full shadow-sm" href="#">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Kembali ke Beranda Cerita</span>
+</a>
+<div class="inline-flex items-center gap-space-xs bg-surface-container-high px-space-md py-space-2xs rounded-full shadow-[0_4px_16px_rgba(225,29,72,0.12)]">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold tracking-wider uppercase">Misi Cinta: Edisi Ulang Tahun Spesial</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+</div>
+</div>
+<!-- Main Section Header -->
+<div class="relative bg-surface-container-low/90 backdrop-blur-md rounded-3xl p-space-lg lg:p-space-2xl shadow-[0_16px_48px_-6px_rgba(225,29,72,0.12)] overflow-hidden">
+<div class="relative z-10 max-w-3xl">
+<div class="inline-flex items-center gap-space-2xs bg-primary/10 text-primary px-space-sm py-space-2xs rounded-full mb-space-sm font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>Rosé Reverie Couple Edition • Level Kenikmatan Cinta 100%</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg lg:text-display-lg text-on-surface tracking-tight leading-tight mb-space-sm">
+            Kuis Seberapa Kenal Kamu &amp; <span class="italic text-primary font-headline-lg">Kado Kejutan</span> Rahasia
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Selamat ulang tahun, kesayangan hatiku! Khusus hari ini, jawab 4 teka-teki manis perjalanan kita untuk membuka peti hadiah rahasia dan toples surat cinta yang telah kurangkai dengan tulus.
+          </p>
+<div class="mt-space-md flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-2xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">quiz</span>
+<span>4 Pertanyaan Kenangan</span>
+</div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-space-2xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">redeem</span>
+<span>3 Hadiah Spesial Siap Buka</span>
+</div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-space-2xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-tertiary text-[18px]">auto_stories</span>
+<span>Toples Surat Kenangan</span>
+</div>
+</div>
+</div>
+<!-- Decorative Floating Graphic Element -->
+<div class="hidden lg:block absolute -right-6 -bottom-8 w-80 h-80 pointer-events-none opacity-90">
+<div class="relative w-full h-full">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-fixed to-secondary-fixed rounded-full blur-2xl opacity-60 animate-pulse"></div>
+<div class="absolute inset-8 rounded-3xl overflow-hidden shadow-xl rotate-3">
+<img class="w-full h-full object-cover" data-alt="Romantic aesthetic polaroid of happy Asian couple laughing together with birthday cake and fairy lights in a cozy cafe, soft rose gold warm glow, film texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD913DO-0aUBADjlSjZPMkNhN2UYzs2Omj6XbWINuxF0LaepuS-viVFPcNC2qw7jYiMzg_aLYIJkn1epHBoO2dTOXueHgDAP1T_AaGdshq8_S7JuvZXwV4FA6OAVy5rX9U_nv0vOo3cSTbXUeQeJNI9aInpofvrvcvt8su0PbWVczuwChYHT6a4k9MPEr0eT0M6UuYebGAKwQE2Rb9Xb1fnm4CeTlZ2KzK2HP9doNVD2hgI0y2lox0Y"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 1: TRIVIA QUIZ GAME -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Column: Quiz Engine (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Quiz Progress Header -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</span>
+<span class="font-title-md text-title-md text-on-surface" id="quiz-question-number">Pertanyaan 1 dari 4</span>
+</div>
+<div class="flex items-center gap-space-2xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Skor Cinta:</span>
+<span class="font-title-md text-title-md text-primary font-bold" id="quiz-score-badge">0%</span>
+</div>
+</div>
+<!-- Custom Interactive Heart Progress Track -->
+<div class="relative w-full h-4 bg-surface-container-high rounded-full overflow-visible flex items-center p-0.5">
+<div class="h-full bg-gradient-to-r from-secondary-container via-primary-container to-primary rounded-full transition-all duration-500 ease-out" id="quiz-progress-bar" style="width: 25%;"></div>
+<div class="absolute left-[25%] -translate-x-1/2 w-6 h-6 bg-surface-container-lowest rounded-full shadow-md flex items-center justify-center text-primary transition-all duration-500 ease-out" id="quiz-progress-heart">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+</div>
+<!-- Dynamic Question Card -->
+<div class="bg-surface-container-lowest rounded-3xl p-space-lg lg:p-space-xl shadow-[0_8px_32px_-4px_rgba(225,29,72,0.08)] relative overflow-hidden">
+<div class="transition-opacity duration-300" id="question-container">
+<div class="flex items-center gap-space-2xs text-secondary mb-space-2xs font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+<span id="question-theme">Nostalgia Awal Bertemu</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-space-md" id="question-text">
+                Di mana tempat pertama kali kita duduk berdua dan ngobrol sampai lupa waktu?
+              </h2>
+<!-- Options Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm" id="options-grid">
+<!-- Buttons injected dynamically -->
+</div>
+</div>
+<!-- Feedback Instant Toast inside Quiz -->
+<div class="hidden mt-space-md p-space-sm rounded-xl flex items-start gap-space-sm transition-all duration-300" id="quiz-feedback">
+<span class="material-symbols-outlined text-[24px]" id="feedback-icon">celebration</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md" id="feedback-title">Tepat Sekali! Sayangku memang hebat.</span>
+<span class="font-body-md text-body-md" id="feedback-desc">Ingatanmu tajam banget, itulah malam paling berkesan waktu pertama kali aku jatuh hati.</span>
+</div>
+</div>
+<!-- Quiz Controls -->
+<div class="mt-space-lg pt-space-md flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock_open</span> Buka kunci pertanyaan berurutan
+              </span>
+<button class="hidden items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-primary text-on-primary font-title-md text-title-md hover:bg-primary-container transition-transform active:scale-95 shadow-md" id="next-question-btn" type="button">
+<span>Pertanyaan Berikutnya</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Result Card (Initially Hidden) -->
+<div class="hidden bg-gradient-to-br from-surface-container-high via-surface-container to-surface-container-lowest rounded-3xl p-space-xl shadow-[0_16px_48px_-6px_rgba(225,29,72,0.16)] text-center relative overflow-hidden" id="quiz-final-card">
+<div class="max-w-lg mx-auto flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-primary-container text-on-primary flex items-center justify-center mb-space-sm shadow-[0_0_24px_rgba(225,29,72,0.35)] animate-bounce">
+<span class="material-symbols-outlined text-[42px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Pencapaian Asmara Resmi</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-1">100% Soulmate Abadi!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-2xs mb-space-md">
+                Kamu lulus kuis cinta dengan predikat “Pasangan Paling Peka &amp; Idaman Sedunia”. Sebagai apresiasi, kotak hadiah misterius di bawah sudah dapat dibuka seluruhnya!
+              </p>
+<div class="flex flex-wrap items-center justify-center gap-space-xs">
+<a class="px-space-lg py-space-xs rounded-full bg-primary text-on-primary font-title-md text-title-md shadow-md hover:bg-primary-container transition-all" href="#kotak-hadiah">
+                  Ambil Kado Sekarang 🎁
+                </a>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container-lowest text-on-surface font-title-md text-title-md hover:bg-surface-container-high transition-colors" id="restart-quiz-btn" type="button">
+                  Ulangi Kuis
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Couple Keepsake & Memory Stats Bento (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Keepsake Polaroid -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-md rotate-1 hover:rotate-0 transition-transform duration-300">
+<div class="w-full h-56 rounded-xl overflow-hidden mb-space-sm relative">
+<img class="w-full h-full object-cover" data-alt="Polaroid style photograph of smiling boyfriend and girlfriend cuddling on a beach sunset picnic, warm cinematic illumination, soft pink and amber hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbZvBnXd_9HH2CmarWzGUPUEAvwO0dQ30-KM2tfmlfV0am8zka1qKFDrz5d0RXuybutFff48Rv7Ku0KN2noaiTl98qwswQb2YXWl1a8oHhIGRLAUYFyKeQJhr9liRYERVRaypcs07NTvaDCu2K0baVC-vTu-2HhsJxkuHZk7DN8p9A_n2VYbq8GNh8gEwHl-wn0TBNJEzyeogdnGoVuDRW8k47kiDygxE2VAtW5y3IUaDccDux28LT"/>
+<div class="absolute top-2 right-2 bg-surface/90 backdrop-blur-md px-space-xs py-0.5 rounded-full text-primary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">favorite</span> Love Snapshot
+              </div>
+</div>
+<div class="text-center">
+<span class="font-headline-md text-title-lg text-on-surface block italic">“Setiap tawa bersamamu adalah rumah.”</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1 block">Foto Kenangan Terindah Kita</span>
+</div>
+</div>
+<!-- Mini Stats Card -->
+<div class="bg-surface-container p-space-md rounded-2xl shadow-sm flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Catatan Romantis</span>
+<div class="grid grid-cols-2 gap-space-xs text-center mt-space-2xs">
+<div class="bg-surface-container-lowest p-space-xs rounded-xl">
+<span class="font-headline-md text-headline-md text-primary block">365+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hari Tertawa</span>
+</div>
+<div class="bg-surface-container-lowest p-space-xs rounded-xl">
+<span class="font-headline-md text-headline-md text-secondary block">1.240+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pesan Rindu</span>
+</div>
+<div class="bg-surface-container-lowest p-space-xs rounded-xl">
+<span class="font-headline-md text-headline-md text-tertiary block">∞</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Doa Bersama</span>
+</div>
+<div class="bg-surface-container-lowest p-space-xs rounded-xl">
+<span class="font-headline-md text-headline-md text-primary block">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hati Selamanya</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: MYSTERY GIFT UNBOXING (Scratch / Reveal Boxes) -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl" id="kotak-hadiah">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="inline-flex items-center gap-space-2xs bg-secondary-fixed text-on-secondary-fixed px-space-sm py-space-2xs rounded-full font-label-md text-label-md mb-space-2xs">
+<span class="material-symbols-outlined text-[16px]">redeem</span>
+<span>Unboxing Hadiah Interaktif</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">3 Kotak Kado Kejutan Rahasia</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Klik masing-masing kotak hadiah untuk membukanya satu per satu, atau tekan tombol cepat di samping!
+          </p>
+</div>
+<button class="inline-flex items-center justify-center gap-space-xs bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary font-title-md text-title-md px-space-lg py-space-xs rounded-full shadow-md transition-all active:scale-95" id="unlock-all-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">magic_button</span>
+<span>Buka Semua Kado Sekaligus</span>
+</button>
+</div>
+<!-- Gift Box Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- GIFT 1: Tiket Bebas Ngambek -->
+<div class="gift-item bg-surface-container-lowest rounded-3xl p-space-lg shadow-[0_8px_32px_-4px_rgba(225,29,72,0.08)] flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer group" id="gift-card-1">
+<!-- Ribbon decorative overlay for locked state -->
+<div class="gift-cover absolute inset-0 bg-gradient-to-br from-primary-container to-primary flex flex-col items-center justify-center text-on-primary text-center p-space-md z-20 transition-transform duration-700 ease-in-out">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest/20 backdrop-blur-md flex items-center justify-center mb-space-xs group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px] text-on-primary">card_giftcard</span>
+</div>
+<span class="font-title-lg text-title-lg font-bold">Kado Rahasia #1</span>
+<span class="font-label-sm text-label-sm opacity-90 mt-1">Klik untuk merobek pita pita emas</span>
+<div class="mt-space-sm px-space-sm py-1 bg-surface-container-lowest/20 rounded-full text-on-primary font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">touch_app</span> Buka Sekarang
+            </div>
+</div>
+<!-- Revealed Content -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-semibold">Voucher Resmi</span>
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Tiket Bebas Ngambek 24 Jam 🕊️</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Dapat dipakai sewaktu-waktu saat kamu merasa kesal! Aku wajib tersenyum, mengalah, memelukmu erat, dan menuruti semua kata-katamu tanpa tapi.
+            </p>
+<div class="bg-surface-container-low p-space-sm rounded-xl flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Berlaku seumur hidup, tanpa tanggal kedaluwarsa.</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-none flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold">KODE: CINTA-NO-AMBEK</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md inline-flex items-center gap-1" onclick="claimVoucher(1)" type="button">
+              Klaim Tiket <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- GIFT 2: Romantic Candlelight Dinner & Dessert Tour -->
+<div class="gift-item bg-surface-container-lowest rounded-3xl p-space-lg shadow-[0_8px_32px_-4px_rgba(225,29,72,0.08)] flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer group" id="gift-card-2">
+<!-- Ribbon decorative overlay -->
+<div class="gift-cover absolute inset-0 bg-gradient-to-br from-secondary to-on-secondary-container flex flex-col items-center justify-center text-on-secondary text-center p-space-md z-20 transition-transform duration-700 ease-in-out">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest/20 backdrop-blur-md flex items-center justify-center mb-space-xs group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px] text-on-secondary">dining</span>
+</div>
+<span class="font-title-lg text-title-lg font-bold">Kado Rahasia #2</span>
+<span class="font-label-sm text-label-sm opacity-90 mt-1">Klik untuk membuka segel lilin</span>
+<div class="mt-space-sm px-space-sm py-1 bg-surface-container-lowest/20 rounded-full text-on-secondary font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">touch_app</span> Buka Sekarang
+            </div>
+</div>
+<!-- Revealed Content -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase font-semibold">Special Date Night</span>
+<span class="material-symbols-outlined text-tertiary text-[22px]" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Candlelight Dinner &amp; Dessert Tour 🥂</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Makan malam romantis privat di tempat estetik pilihanmu, lengkap dengan berburu gelato dan kue manis favorit kita sampai larut malam.
+            </p>
+<div class="bg-surface-container-low p-space-sm rounded-xl flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-tertiary text-[18px]">calendar_month</span>
+<span>Reservasi sudah disiapkan akhir pekan ini!</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-none flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">KODE: DINNER-DATE-SWEET</span>
+<button class="text-secondary hover:text-on-secondary-fixed-variant font-label-md text-label-md inline-flex items-center gap-1" onclick="claimVoucher(2)" type="button">
+              Klaim Tiket <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- GIFT 3: Wishlist Impian -->
+<div class="gift-item bg-surface-container-lowest rounded-3xl p-space-lg shadow-[0_8px_32px_-4px_rgba(225,29,72,0.08)] flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer group" id="gift-card-3">
+<!-- Ribbon decorative overlay -->
+<div class="gift-cover absolute inset-0 bg-gradient-to-br from-tertiary to-tertiary-container flex flex-col items-center justify-center text-on-tertiary text-center p-space-md z-20 transition-transform duration-700 ease-in-out">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest/20 backdrop-blur-md flex items-center justify-center mb-space-xs group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px] text-on-tertiary">auto_awesome</span>
+</div>
+<span class="font-title-lg text-title-lg font-bold">Kado Rahasia #3</span>
+<span class="font-label-sm text-label-sm opacity-90 mt-1">Klik untuk membuka kotak harapan emas</span>
+<div class="mt-space-sm px-space-sm py-1 bg-surface-container-lowest/20 rounded-full text-on-tertiary font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">touch_app</span> Buka Sekarang
+            </div>
+</div>
+<!-- Revealed Content -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-1 rounded-md bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase font-semibold">Ultimate Wish</span>
+<span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">1 Permintaan Bebas Tanpa Syarat ✨</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Tuliskan apa pun impian atau keinginanmu hari ini: jalan-jalan ke suatu kota, kado idaman, atau liburan seru. Aku berjanji akan mewujudkannya!
+            </p>
+<div class="bg-surface-container-low p-space-sm rounded-xl flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[18px]">favorite</span>
+<span>Hak mutlak milikmu seorang hari ini.</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-none flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold">KODE: KABULKAN-IMPIAN</span>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md inline-flex items-center gap-1" onclick="claimVoucher(3)" type="button">
+              Klaim Tiket <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: INTERACTIVE LOVE JAR (Toples Pesan Manis Acak) -->
+<section class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop py-space-xl mb-space-2xl">
+<div class="bg-gradient-to-r from-surface-container-low via-surface-container to-surface-container-high rounded-3xl p-space-lg lg:p-space-2xl shadow-[0_16px_48px_-6px_rgba(225,29,72,0.12)]">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Toples Visual Container (5 cols) -->
+<div class="lg:col-span-5 flex flex-col items-center justify-center text-center">
+<div class="relative w-64 h-80 bg-surface-container-lowest/80 backdrop-blur-md rounded-[40px] shadow-2xl p-space-md flex flex-col items-center justify-between overflow-hidden group">
+<!-- Jar Lid -->
+<div class="w-36 h-6 bg-tertiary-fixed rounded-t-xl shadow-md flex items-center justify-center">
+<div class="w-20 h-1 bg-tertiary rounded-full"></div>
+</div>
+<!-- Animated Floating Notes Inside Jar -->
+<div class="relative w-full h-48 flex items-center justify-center">
+<div class="absolute w-12 h-12 rounded-lg bg-secondary-fixed/90 shadow-sm rotate-12 flex items-center justify-center text-secondary -top-2 left-6 animate-pulse">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<div class="absolute w-14 h-14 rounded-lg bg-primary-fixed/90 shadow-sm -rotate-6 flex items-center justify-center text-primary top-10 right-4 animate-bounce">
+<span class="material-symbols-outlined text-[22px]">favorite</span>
+</div>
+<div class="absolute w-12 h-12 rounded-lg bg-tertiary-fixed-dim/90 shadow-sm rotate-45 flex items-center justify-center text-tertiary bottom-4 left-10">
+<span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+</div>
+<!-- Sparkle Aura -->
+<div class="w-28 h-28 rounded-full bg-secondary-container/30 blur-xl"></div>
+</div>
+<!-- Jar Bottom Base -->
+<div class="w-full text-center pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant/80 font-semibold">100 Toples Kasih</span>
+</div>
+</div>
+<button class="mt-space-md px-space-lg py-space-sm bg-primary hover:bg-primary-container text-on-primary font-title-md text-title-md rounded-full shadow-[0_8px_24px_rgba(184,0,53,0.3)] transition-all active:scale-95 flex items-center gap-space-xs" id="draw-love-letter-btn" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">sentiment_very_satisfied</span>
+<span>Ambil 1 Pesan Manis Hari Ini</span>
+</button>
+</div>
+<!-- Note Content Display (7 cols) -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<div class="inline-flex items-center gap-space-2xs text-primary font-label-md text-label-md mb-space-2xs">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+<span>Surat Cinta Spontan Untukmu</span>
+</div>
+<!-- Dynamic Note Reader Box -->
+<div class="bg-surface-container-lowest p-space-lg lg:p-space-xl rounded-2xl shadow-sm relative min-h-[220px] flex flex-col justify-between transition-all duration-500" id="love-note-box">
+<div class="relative z-10">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high font-label-sm text-label-sm text-on-surface" id="note-index-badge">Pesan Cinta #01</span>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface italic leading-relaxed" id="note-quote-text">
+                  “Di antara milyaran manusia di bumi, bersyukur sekali Tuhan menuntun langkahku untuk menemukan dan mencintaimu.”
+                </p>
+</div>
+<div class="relative z-10 mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ditulis dengan seluruh hatiku • Selamanya</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium" id="note-date">Spesial Ulang Tahunmu</span>
+</div>
+</div>
+<!-- Toast / Claim Notification -->
+<div class="hidden mt-space-sm p-space-sm rounded-xl bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center gap-space-xs transition-all" id="voucher-toast">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span id="voucher-toast-msg">Tiket berhasil diklaim ke daftar keinginanmu! 💕</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // --- TRIVIA QUIZ DATA & LOGIC ---
+  const triviaData = [
+    {
+      theme: "Nostalgia Kencan Pertama",
+      question: "Di mana tempat pertama kali kita duduk berdua dan ngobrol sampai lupa waktu?",
+      options: [
+        "Kedai Kopi Sudut Kota dengan aroma vanila",
+        "Taman Kota di bawah pohon rindang",
+        "Bioskop sambil makan popcorn karamel",
+        "Food court mall yang ramai"
+      ],
+      correctIndex: 0,
+      feedbackSuccess: "Tepat Sekali! Ingatanmu luar biasa!",
+      feedbackDesc: "Kala itu kita pesan es kopi susu dan ngobrol berjam-jam tanpa rasa bosan sama sekali."
+    },
+    {
+      theme: "Kebiasaan Kuliner",
+      question: "Makanan atau camilan apa yang hampir SELALU kita sepakati kalau lagi bingung mau makan?",
+      options: [
+        "Bakso pedas kuah segar",
+        "Mie ayam ekstra pangsit goreng",
+        "Sushi platter & camilan manis",
+        "Nasi goreng pinggir jalan langganan"
+      ],
+      correctIndex: 1,
+      feedbackSuccess: "100% Benar! Perut dan lidah kita memang sehati!",
+      feedbackDesc: "Pangsit gorengnya selalu kamu ambil setengah, dan aku selalu dengan senang hati memberikannya."
+    },
+    {
+      theme: "Karakter & Tingkah Lucu",
+      question: "Apa tingkah lucuku yang kata kamu paling bikin gemas kalau lagi kangen atau manja?",
+      options: [
+        "Suka pura-pura ngambek biar dirayu",
+        "Mengirim stiker kucing bertubi-tubi",
+        "Mendadak cerewet menceritakan hal random seharian",
+        "Meniru caramu berbicara sambil tertawa kecil"
+      ],
+      correctIndex: 2,
+      feedbackSuccess: "Tepat! Kamu paling kenal duniaku!",
+      feedbackDesc: "Karena hanya kepadamu aku bisa menceritakan hal paling konyol tanpa rasa malu."
+    },
+    {
+      theme: "Mimpi Masa Depan",
+      question: "Destinasi liburan impian apa yang sering kita rencanakan untuk kita jelajahi berdua selanjutnya?",
+      options: [
+        "Menikmati salju dan desa tenang di Swiss / Hokkaido",
+        "Santai di tepi pantai pasir putih Bali / Labuan Bajo",
+        "Jalan santai musim gugur di Kyoto / Seoul",
+        "Semua jawaban benar, asal perginya menggenggam tanganmu!"
+      ],
+      correctIndex: 3,
+      feedbackSuccess: "Sempurna! Jawaban paling puitis dan tepat!",
+      feedbackDesc: "Ke mana pun kita melangkah, tujuan terindahku selalu saat bersamamu."
+    }
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+  let answered = false;
+
+  const questionNumberEl = document.getElementById("quiz-question-number");
+  const scoreBadgeEl = document.getElementById("quiz-score-badge");
+  const progressBarEl = document.getElementById("quiz-progress-bar");
+  const progressHeartEl = document.getElementById("quiz-progress-heart");
+  const themeEl = document.getElementById("question-theme");
+  const textEl = document.getElementById("question-text");
+  const optionsGridEl = document.getElementById("options-grid");
+  const feedbackEl = document.getElementById("quiz-feedback");
+  const feedbackTitleEl = document.getElementById("feedback-title");
+  const feedbackDescEl = document.getElementById("feedback-desc");
+  const nextBtn = document.getElementById("next-question-btn");
+  const quizFinalCard = document.getElementById("quiz-final-card");
+  const restartQuizBtn = document.getElementById("restart-quiz-btn");
+
+  function renderQuestion(index) {
+    answered = false;
+    const q = triviaData[index];
+    questionNumberEl.textContent = `Pertanyaan ${index + 1} dari ${triviaData.length}`;
+    themeEl.textContent = q.theme;
+    textEl.textContent = q.question;
+
+    feedbackEl.classList.add("hidden");
+    nextBtn.classList.add("hidden");
+
+    // Progress percentage
+    const progressPercent = Math.round(((index + 1) / triviaData.length) * 100);
+    progressBarEl.style.width = `${progressPercent}%`;
+    progressHeartEl.style.left = `${progressPercent}%`;
+
+    // Render option buttons
+    optionsGridEl.innerHTML = "";
+    q.options.forEach((opt, optIndex) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "quiz-opt-btn text-left p-space-md rounded-2xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-200 text-on-surface font-title-md text-title-md flex items-center justify-between group shadow-sm active:scale-[0.98]";
+      btn.innerHTML = `
+        <span class="flex-1 pr-2">${opt}</span>
+        <span class="material-symbols-outlined text-[20px] text-outline-variant group-hover:text-primary transition-colors">radio_button_unchecked</span>
+      `;
+      btn.addEventListener("click", () => handleSelectOption(optIndex, btn));
+      optionsGridEl.appendChild(btn);
+    });
+  }
+
+  function handleSelectOption(chosenIndex, selectedBtn) {
+    if (answered) return;
+    answered = true;
+
+    const q = triviaData[currentQuestion];
+    const allButtons = optionsGridEl.querySelectorAll("button");
+
+    allButtons.forEach((b) => {
+      b.disabled = true;
+      b.classList.remove("hover:bg-surface-container-high");
+    });
+
+    if (chosenIndex === q.correctIndex) {
+      score += 25;
+      scoreBadgeEl.textContent = `${score}%`;
+      selectedBtn.classList.remove("bg-surface-container-low");
+      selectedBtn.classList.add("bg-primary-container", "text-on-primary-container", "shadow-md");
+      selectedBtn.querySelector(".material-symbols-outlined").textContent = "check_circle";
+      selectedBtn.querySelector(".material-symbols-outlined").classList.remove("text-outline-variant");
+      selectedBtn.querySelector(".material-symbols-outlined").classList.add("text-on-primary-container");
+
+      feedbackEl.classList.remove("hidden", "bg-error-container", "text-on-error-container");
+      feedbackEl.classList.add("bg-surface-container-high", "text-on-surface");
+      feedbackTitleEl.textContent = q.feedbackSuccess;
+      feedbackDescEl.textContent = q.feedbackDesc;
+    } else {
+      selectedBtn.classList.remove("bg-surface-container-low");
+      selectedBtn.classList.add("bg-surface-container-highest", "text-on-surface-variant");
+      
+      // Highlight correct one
+      const correctBtn = allButtons[q.correctIndex];
+      correctBtn.classList.remove("bg-surface-container-low");
+      correctBtn.classList.add("bg-secondary-container", "text-on-secondary-container");
+      correctBtn.querySelector(".material-symbols-outlined").textContent = "favorite";
+
+      feedbackEl.classList.remove("hidden", "bg-surface-container-high");
+      feedbackEl.classList.add("bg-surface-container-high", "text-on-surface");
+      feedbackTitleEl.textContent = "Hampir tepat, tapi cintaku tetap 100%!";
+      feedbackDescEl.textContent = q.feedbackDesc;
+    }
+
+    if (currentQuestion < triviaData.length - 1) {
+      nextBtn.classList.remove("hidden");
+      nextBtn.classList.add("inline-flex");
+    } else {
+      setTimeout(() => {
+        finishQuiz();
+      }, 1400);
+    }
+  }
+
+  function finishQuiz() {
+    document.getElementById("question-container").parentElement.classList.add("hidden");
+    quizFinalCard.classList.remove("hidden");
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (currentQuestion < triviaData.length - 1) {
+      currentQuestion++;
+      renderQuestion(currentQuestion);
+    }
+  });
+
+  restartQuizBtn.addEventListener("click", () => {
+    score = 0;
+    currentQuestion = 0;
+    scoreBadgeEl.textContent = "0%";
+    quizFinalCard.classList.add("hidden");
+    document.getElementById("question-container").parentElement.classList.remove("hidden");
+    renderQuestion(0);
+  });
+
+  // Initial load of first question
+  renderQuestion(0);
+
+  // --- MYSTERY GIFTS UNBOXING INTERACTION ---
+  const giftCards = [
+    document.getElementById("gift-card-1"),
+    document.getElementById("gift-card-2"),
+    document.getElementById("gift-card-3")
+  ];
+
+  giftCards.forEach((card) => {
+    card.addEventListener("click", function (e) {
+      // Avoid conflict if clicking voucher link
+      if (e.target.tagName.toLowerCase() === 'button' || e.target.closest('button')) return;
+      
+      const cover = this.querySelector(".gift-cover");
+      if (cover) {
+        cover.classList.add("-translate-y-full", "opacity-0");
+        setTimeout(() => {
+          cover.style.display = "none";
+        }, 650);
+      }
+    });
+  });
+
+  const unlockAllBtn = document.getElementById("unlock-all-btn");
+  unlockAllBtn.addEventListener("click", () => {
+    giftCards.forEach((card) => {
+      const cover = card.querySelector(".gift-cover");
+      if (cover) {
+        cover.classList.add("-translate-y-full", "opacity-0");
+        setTimeout(() => {
+          cover.style.display = "none";
+        }, 650);
+      }
+    });
+    showToast("Semua kado rahasia berhasil dibuka! Silakan nikmati hadiahmu, Cinta 💕");
+  });
+
+  function claimVoucher(id) {
+    const names = [
+      "Tiket Bebas Ngambek 24 Jam",
+      "Candlelight Dinner & Dessert Tour",
+      "Permintaan Bebas Tanpa Syarat"
+    ];
+    showToast(`Berhasil diklaim: "${names[id - 1]}". Tunjukkan tiket ini kapan saja padaku! ✨`);
+  }
+
+  // --- INTERACTIVE LOVE JAR LETTERS ---
+  const loveQuotes = [
+    {
+      badge: "Pesan Cinta #01",
+      quote: "Di antara milyaran manusia di bumi, bersyukur sekali Tuhan menuntun langkahku untuk menemukan dan mencintaimu.",
+      date: "Selalu & Selamanya"
+    },
+    {
+      badge: "Pesan Cinta #02",
+      quote: "Terima kasih sudah selalu sabar mendengarkan keluh kesahku dan menjadi tempat terhangat saat dunia sedang terasa dingin.",
+      date: "Doa Tulusku Hari Ini"
+    },
+    {
+      badge: "Pesan Cinta #03",
+      quote: "Senyum manismu adalah pemandangan favoritku setiap hari. Semoga harimu penuh tawa dan kebahagiaan tak berujung.",
+      date: "Spesial Hari Lahirmu"
+    },
+    {
+      badge: "Pesan Cinta #04",
+      quote: "Mencintaimu bukan tentang hitungan hari atau bulan, tapi tentang bagaimana setiap detik terasa bermakna saat kita saling tatap.",
+      date: "Dari Lubuk Hatiku"
+    },
+    {
+      badge: "Pesan Cinta #05",
+      quote: "Selamat bertambah usia, belahan jiwaku! Semoga semua mimpi besarmu terwujud, dan aku berjanji akan selalu ada di sampingmu.",
+      date: "Janji Setiaku"
+    },
+    {
+      badge: "Pesan Cinta #06",
+      quote: "Jika aku harus memilih satu hal terbaik yang pernah terjadi dalam hidupku, jawabannya akan selalu adalah: Bertemu denganmu.",
+      date: "Keabadian Kita"
+    }
+  ];
+
+  let currentQuoteIndex = 0;
+  const drawLetterBtn = document.getElementById("draw-love-letter-btn");
+  const noteIndexBadge = document.getElementById("note-index-badge");
+  const noteQuoteText = document.getElementById("note-quote-text");
+  const noteDate = document.getElementById("note-date");
+  const noteBox = document.getElementById("love-note-box");
+
+  drawLetterBtn.addEventListener("click", () => {
+    noteBox.classList.add("scale-95", "opacity-50");
+    
+    setTimeout(() => {
+      currentQuoteIndex = (currentQuoteIndex + 1) % loveQuotes.length;
+      const data = loveQuotes[currentQuoteIndex];
+      noteIndexBadge.textContent = data.badge;
+      noteQuoteText.innerHTML = `&ldquo;${data.quote}&rdquo;`;
+      noteDate.textContent = data.date;
+      
+      noteBox.classList.remove("scale-95", "opacity-50");
+      showToast("Pesan manis baru telah terambil dari toples cinta! 💌");
+    }, 280);
+  });
+
+  // --- COMMON TOAST FUNCTION ---
+  function showToast(message) {
+    const toast = document.getElementById("voucher-toast");
+    const toastMsg = document.getElementById("voucher-toast-msg");
+    toastMsg.textContent = message;
+    toast.classList.remove("hidden");
+    
+    // Auto hide after 4 seconds
+    setTimeout(() => {
+      toast.classList.add("hidden");
+    }, 4000);
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-space-3xl py-space-2xl"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin-desktop flex flex-col items-center justify-center gap-space-sm text-center"><div class="flex items-center gap-space-2xs text-primary"><span class="material-symbols-outlined text-[20px]">favorite</span><span class="font-headline-md text-title-md">Dibuat dengan segenap cinta &amp; kasih</span><span class="material-symbols-outlined text-[20px]">favorite</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-lg">Merayakan setiap detik, tawa, dan kenangan indah bersamamu. Semoga hari spesial ini seindah senyumanmu.</p><p class="font-label-sm text-label-sm text-on-surface-variant/80 mt-space-xs">© 2024 Love Letter Edition • Selamanya Untukmu</p></div></footer></body></html>

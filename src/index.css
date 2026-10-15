@@ -9,28 +9,28 @@
   --mint: #d1f9ea;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(
-    135deg,
-    var(--pink-light),
-    var(--purple-light)
-  );
+  font-family: "Plus Jakarta Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
+  width: 100%;
   overflow-x: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+  background-color: #FAF7F2;
 }
 
-.container {
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================================
+   ULTAH 24 SCOPED STYLES (PINK ROMANCE RETRO)
+   ======================================================== */
+.ultah-24-scope .container {
   position: relative;
   width: 90%;
   max-width: 800px;
@@ -43,7 +43,7 @@ body {
   animation: fadeIn 1.5s ease-in-out;
 }
 
-h1 {
+.ultah-24-scope .container h1 {
   color: #ff6b8b;
   margin-bottom: 1rem;
   font-size: 2.5rem;
@@ -51,14 +51,14 @@ h1 {
   animation: titleAnimation 3s infinite alternate;
 }
 
-.subtitle {
+.ultah-24-scope .subtitle {
   color: #8a6bbf;
   margin-bottom: 2rem;
   font-size: 1.3rem;
   font-weight: 500;
 }
 
-.message {
+.ultah-24-scope .message {
   color: #5a5a5a;
   line-height: 1.8;
   margin-bottom: 2rem;
@@ -66,7 +66,7 @@ h1 {
   padding: 0 1rem;
 }
 
-.heart {
+.ultah-24-scope .heart {
   color: #ff6b8b;
   font-size: 1.5rem;
   display: inline-block;
@@ -75,70 +75,19 @@ h1 {
   transform-origin: center;
 }
 
-.highlight {
+.ultah-24-scope .highlight {
   color: #ff6b8b;
   font-weight: bold;
 }
 
-.cake {
+.ultah-24-scope .cake {
   font-size: 5rem;
   margin: 1rem 0;
   animation: bounce 2s infinite alternate;
   display: inline-block;
 }
 
-.balloons-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.balloon {
-  position: absolute;
-  bottom: -100px;
-  background-color: var(--pink-medium);
-  border-radius: 50%;
-  width: 40px;
-  height: 50px;
-  opacity: 0.7;
-}
-
-.balloon::before {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.2);
-  bottom: -40px;
-  left: 20px;
-}
-
-.balloon:nth-child(2n) {
-  background-color: var(--purple-light);
-  width: 35px;
-  height: 45px;
-  animation-delay: 0.5s;
-}
-
-.balloon:nth-child(3n) {
-  background-color: var(--blue-light);
-  width: 45px;
-  height: 55px;
-  animation-delay: 1s;
-}
-
-.balloon:nth-child(4n) {
-  background-color: var(--mint);
-  width: 30px;
-  height: 40px;
-  animation-delay: 1.5s;
-}
-
-.gallery {
+.ultah-24-scope .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -146,7 +95,8 @@ h1 {
   margin: 2rem 0;
 }
 
-.photo-frame {
+.ultah-24-scope .photo-frame,
+.ultah-24-scope .photo-frame2 {
   width: 130px;
   height: 130px;
   background-color: white;
@@ -160,48 +110,29 @@ h1 {
   transition: all 0.3s ease;
 }
 
-.photo-frame2 {
-  width: 130px;
-  height: 130px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: rotate(-5deg);
-  transition: all 0.3s ease;
-}
-
-.photo-frame:nth-child(2n) {
+.ultah-24-scope .photo-frame:nth-child(2n) {
   transform: rotate(3deg);
 }
 
-.photo-frame2:nth-child(5n) {
+.ultah-24-scope .photo-frame2:nth-child(5n) {
   transform: rotate(3deg);
 }
 
-.photo-frame:hover {
+.ultah-24-scope .photo-frame:hover,
+.ultah-24-scope .photo-frame2:hover {
   transform: scale(3) rotate(0);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
-.photo-frame2:hover {
-  transform: scale(3) rotate(0);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-}
-
-.photo {
+.ultah-24-scope .photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
 
-.music-control {
+.ultah-24-scope .music-control {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
@@ -209,7 +140,7 @@ h1 {
   gap: 10px;
 }
 
-.play-button {
+.ultah-24-scope .play-button {
   background-color: #ff6b8b;
   color: white;
   border: none;
@@ -225,41 +156,31 @@ h1 {
   transition: all 0.2s ease;
 }
 
-.play-button:hover {
+.ultah-24-scope .play-button:hover {
   transform: scale(1.1);
   background-color: #ff4d73;
 }
 
-.music-text {
+.ultah-24-scope .music-text {
   color: #8a6bbf;
   font-size: 0.9rem;
 }
 
-.signature {
+.ultah-24-scope .signature {
   margin-top: 2rem;
   font-style: italic;
   color: #8a6bbf;
   font-size: 1.2rem;
 }
 
-.confetti {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background-color: var(--pink-medium);
-  top: -10px;
-  opacity: 0;
-}
-
-.envelope-container {
+.ultah-24-scope .envelope-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  /* background-color: #ffd6e0; */
+  height: auto;
 }
 
-.envelope {
+.ultah-24-scope .envelope {
   position: relative;
   width: 300px;
   height: 200px;
@@ -270,7 +191,7 @@ h1 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.envelope-flap {
+.ultah-24-scope .envelope-flap {
   position: absolute;
   top: 0;
   left: 0;
@@ -282,7 +203,7 @@ h1 {
   transition: transform 0.5s ease-in-out;
 }
 
-.envelope-body {
+.ultah-24-scope .envelope-body {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -290,7 +211,7 @@ h1 {
   background-color: #fff;
 }
 
-.open-button {
+.ultah-24-scope .open-button {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -305,15 +226,15 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-.open-button:hover {
+.ultah-24-scope .open-button:hover {
   background-color: #ff4a6e;
 }
 
-.envelope.open .envelope-flap {
+.ultah-24-scope .envelope.open .envelope-flap {
   transform: rotateX(180deg);
 }
 
-.close-button {
+.ultah-24-scope .close-button {
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #ff6b8b;
@@ -325,8 +246,37 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-.close-button:hover {
+.ultah-24-scope .close-button:hover {
   background-color: #ff4a6e;
+}
+
+/* Balon & Confetti Ultah 24 (Fixed & Terisolasi agar tidak menambah tinggi scroll dokumen) */
+.ultah-24-scope .balloons-container,
+.ultah-24-scope #balloons-container-24,
+.ultah-24-scope #confetti-container-24 {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.ultah-24-scope .balloon {
+  position: absolute;
+  bottom: -80px;
+  width: 32px;
+  height: 42px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.ultah-24-scope .confetti {
+  position: absolute;
+  pointer-events: none;
+  z-index: 11;
 }
 
 @keyframes fadeIn {
@@ -397,7 +347,7 @@ h1 {
 }
 
 @media (max-width: 600px) {
-  h1 {
+  .container h1 {
     font-size: 2rem;
   }
 
@@ -419,3 +369,321 @@ h1 {
     height: 100px;
   }
 }
+
+/* ========================================================
+   WARM COFFEE & 25TH BIRTHDAY SPECIAL STYLES (MOBILE-FIRST)
+   ======================================================== */
+
+.font-serif-title {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-handwriting {
+  font-family: 'Caveat', cursive;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* 3D Flip Cards for 25 Sips & Polaroids */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Sembunyikan sisi depan saat kartu terbalik agar elemen interaktif depan tidak menembus teks */
+.flip-card.flipped .flip-card-front {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Sembunyikan sisi belakang saat kartu menghadap depan */
+.flip-card:not(.flipped) .flip-card-back {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Animasi Api Lilin Realistis & Pantulan Cahaya */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1, 1) rotate(-1deg);
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.95)) drop-shadow(0 0 20px rgba(251, 191, 36, 0.6));
+  }
+  20% {
+    transform: scale(0.96, 1.05) rotate(1.5deg);
+    filter: drop-shadow(0 0 14px rgba(251, 191, 36, 1)) drop-shadow(0 0 24px rgba(245, 158, 11, 0.7));
+  }
+  40% {
+    transform: scale(1.04, 0.96) rotate(-2deg);
+    filter: drop-shadow(0 0 9px rgba(245, 158, 11, 0.85)) drop-shadow(0 0 16px rgba(251, 191, 36, 0.5));
+  }
+  60% {
+    transform: scale(0.98, 1.03) rotate(1deg);
+    filter: drop-shadow(0 0 13px rgba(251, 191, 36, 0.95)) drop-shadow(0 0 22px rgba(245, 158, 11, 0.65));
+  }
+  80% {
+    transform: scale(1.03, 0.98) rotate(-0.5deg);
+    filter: drop-shadow(0 0 11px rgba(245, 158, 11, 0.9)) drop-shadow(0 0 18px rgba(251, 191, 36, 0.6));
+  }
+}
+
+.candle-flame {
+  animation: flameFlicker 0.4s infinite alternate ease-in-out;
+  transform-origin: bottom center;
+}
+
+/* Pendaran Cahaya Lilin Dinamis (Candlelight Glow) */
+@keyframes candleAmbientPulse {
+  0%, 100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+}
+
+.candle-ambient-glow {
+  animation: candleAmbientPulse 1.8s infinite ease-in-out;
+}
+
+/* Animasi Asap Halus Meliuk Setelah Ditiup (Smoke Wisp) */
+@keyframes smokeRiseWisp {
+  0% {
+    opacity: 0.9;
+    transform: translateY(0) scale(0.6) rotate(0deg);
+    filter: blur(0px);
+  }
+  40% {
+    opacity: 0.65;
+    transform: translateY(-16px) scale(1) rotate(10deg);
+    filter: blur(1px);
+  }
+  75% {
+    opacity: 0.35;
+    transform: translateY(-34px) scale(1.5) rotate(-14deg);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) scale(2) rotate(18deg);
+    filter: blur(3.5px);
+  }
+}
+
+.smoke-puff-wisp {
+  animation: smokeRiseWisp 1.8s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+}
+
+/* Animasi Uap Kopi Hangat */
+@keyframes steamCurl {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  60% {
+    transform: translateY(-16px) scaleX(1.3) rotate(6deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-32px) scaleX(1.7) rotate(-6deg);
+    opacity: 0;
+  }
+}
+
+.steam-1 {
+  animation: steamCurl 2.8s infinite ease-out;
+}
+.steam-2 {
+  animation: steamCurl 2.8s infinite 0.9s ease-out;
+}
+.steam-3 {
+  animation: steamCurl 2.8s infinite 1.8s ease-out;
+}
+
+/* Wax Seal Pulse Effect */
+@keyframes sealGlow {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(196, 139, 69, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(212, 163, 115, 0.75);
+    transform: scale(1.03);
+  }
+}
+
+.wax-seal-pulse {
+  animation: sealGlow 2.5s infinite ease-in-out;
+}
+
+/* Smooth custom scrollbar for 25 Sips grid if needed */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(230, 204, 178, 0.2);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(196, 139, 69, 0.5);
+  border-radius: 8px;
+}
+
+/* Vintage Coffee Kraft Envelope 25 - Cinematic 3D Unboxing */
+.envelope-wrapper-25 {
+  perspective: 1200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.envelope-coffee-25 {
+  position: relative;
+  width: 330px;
+  max-width: 92vw;
+  height: 220px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.envelope-coffee-25:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* Flap Segitiga Atas Amplop */
+.envelope-flap-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 125px;
+  background: linear-gradient(180deg, #D4A373 0%, #C48B47 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s ease;
+  z-index: 25;
+  filter: drop-shadow(0 4px 6px rgba(44, 24, 16, 0.2));
+}
+
+.envelope-coffee-25.open .envelope-flap-top {
+  transform: rotateX(180deg);
+  z-index: 5;
+  filter: drop-shadow(0 -4px 6px rgba(44, 24, 16, 0.15));
+}
+
+/* Segel Lilin 25 (Wax Seal) */
+.wax-seal-seal {
+  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+}
+
+.envelope-coffee-25.open .wax-seal-seal {
+  transform: translate(-50%, -50%) scale(1.35);
+  opacity: 0;
+  filter: blur(4px);
+}
+
+/* Kartu Undangan di dalam Amplop yang Meluncur Naik */
+.envelope-letter-card {
+  position: absolute;
+  top: 24px;
+  left: 14px;
+  right: 14px;
+  height: 168px;
+  background: #FFFDF9;
+  border-radius: 12px;
+  border: 1.5px solid #E5AD58;
+  box-shadow: 0 4px 14px rgba(44, 24, 16, 0.12);
+  z-index: 10;
+  transition: transform 0.85s cubic-bezier(0.34, 1.2, 0.64, 1), box-shadow 0.85s ease, z-index 0.1s ease;
+  transform: translateY(0);
+}
+
+.envelope-coffee-25.card-popped .envelope-letter-card {
+  transform: translateY(-130px) scale(1.03);
+  z-index: 28;
+  box-shadow: 0 18px 40px -4px rgba(44, 24, 16, 0.28);
+}
+
+/* Transisi Zoom Menembus Kartu ke Halaman Utama */
+.envelope-wrapper-25.zoom-transition {
+  animation: envelopeZoomIntoCard 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes envelopeZoomIntoCard {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.15) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+/* Ambient Floating Particles Animation */
+@keyframes floatAmbient {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.85);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  35% {
+    transform: translateY(-35vh) translateX(16px) scale(1.05);
+  }
+  65% {
+    transform: translateY(-70vh) translateX(-12px) scale(1);
+  }
+  90% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(18px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.animate-float-ambient {
+  animation: floatAmbient linear infinite;
+}
+
+
