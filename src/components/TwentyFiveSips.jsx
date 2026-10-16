@@ -165,9 +165,15 @@ export default function TwentyFiveSips() {
                     }`}
                   >
                     <Coffee className="w-5 h-5" />
-                    {/* Steam Micro-animation */}
-                    <span className="absolute -top-2 left-3 w-1 h-2 bg-amber-400/50 rounded-full animate-ping opacity-60 pointer-events-none" />
-                    <span className="absolute -top-3 left-6 w-1 h-2.5 bg-amber-400/40 rounded-full animate-pulse opacity-75 pointer-events-none" />
+                    {/* Steam Micro-animation (Hanya aktif pada kartu emas atau saat hover agar performa 60 FPS) */}
+                    {isGolden25 ? (
+                      <>
+                        <span className="absolute -top-2 left-3 w-1 h-2 bg-amber-400/50 rounded-full animate-ping opacity-60 pointer-events-none" />
+                        <span className="absolute -top-3 left-6 w-1 h-2.5 bg-amber-400/40 rounded-full animate-pulse opacity-75 pointer-events-none" />
+                      </>
+                    ) : (
+                      <span className="absolute -top-2 left-4 w-1 h-2 bg-amber-400/30 rounded-full opacity-0 group-hover:opacity-80 transition-opacity pointer-events-none" />
+                    )}
                   </div>
 
                   {/* Keterangan Subtitle */}

@@ -8,7 +8,7 @@ export default function ScrollReveal({
   direction = "up", // "up" | "down" | "left" | "right" | "scale" | "fade"
   duration = 750,
   distance = 36,
-  once = false, // Animasi masuk dan keluar berulang terus saat scroll
+  once = true, // Cukup animasikan sekali saat masuk viewport agar scroll 60 FPS lancar tanpa lag
   amount = 0.15,
 }) {
   const getVariants = () => {

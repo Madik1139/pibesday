@@ -148,7 +148,7 @@ export default function Ultah25({ onGoToUltah24 }) {
                   </span>
                 </div>
                 <div className="text-[9px] font-mono text-[#A86B32] font-semibold bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200/60">
-                  14 OKTOBER
+                  17 OKTOBER
                 </div>
               </div>
 

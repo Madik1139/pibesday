@@ -10,7 +10,7 @@ export const relationshipMilestones = {
 export const coffeeLetter = {
   title: "Surat Spesial Ulang Tahun ke-25",
   recipient: "Evina Dini Anjriani",
-  date: "14 Oktober 2026",
+  date: "17 Oktober 2026",
   sender: "Dika",
   paragraphs: [
     "Selamat ulang tahun yang ke-25, sayang. ✨🎂",

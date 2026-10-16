@@ -105,7 +105,7 @@ export function generateAndDownloadTicketImage(voucher) {
   ctx.textAlign = "center";
   ctx.fillText("||| || |||| | |||| ||| ||", 0, -5);
   ctx.font = "bold 11px monospace";
-  ctx.fillText("NO-EXPIRE-2026", 0, 16);
+  ctx.fillText("NO-EXPIRE-LIFETIME", 0, 16);
   ctx.restore();
 
   // -------------------------------------------------------------

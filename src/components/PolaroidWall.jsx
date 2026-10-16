@@ -267,6 +267,7 @@ export default function PolaroidWall() {
                       alt={item.caption}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
                     />
 
                     {/* Tag Lokasi / Kategori di Pojok Kiri Atas */}
@@ -513,6 +514,7 @@ export default function PolaroidWall() {
                       src={currentPhoto.src}
                       alt={currentPhoto.caption}
                       className="w-full max-h-[58vh] sm:max-h-[62vh] object-contain rounded-xl mx-auto shadow-xs"
+                      decoding="async"
                     />
                   </div>
 
@@ -556,7 +558,7 @@ export default function PolaroidWall() {
                       Mas Dika 🤎
                     </span>
                     <span className="font-mono text-[10px] sm:text-[11px] text-[#8C5E28]/70">
-                      14 Oktober • Bandung ⇄ Bekasi
+                      17 Oktober • Bandung ⇄ Bekasi
                     </span>
                   </div>
                 </div>

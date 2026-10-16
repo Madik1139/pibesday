@@ -77,7 +77,7 @@ export default function CoffeePostcard() {
               </span>
             </div>
             <div className="text-[9px] font-mono text-[#A86B32] mt-0.5 font-semibold">
-              AIR MAIL • 14 OKT 2026
+              AIR MAIL • 17 OKT 2026
             </div>
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function CoffeePostcard() {
                   <Heart className="w-5 h-5 text-rose-500 fill-rose-500 inline" />
                 </span>
                 <span className="text-[10px] font-mono text-[#8C5E28]/70 mt-0.5">
-                  Bandung • 14 Oktober
+                  Bandung • 17 Oktober
                 </span>
               </div>
 

@@ -121,3 +121,17 @@ Setiap komponen Card harus memiliki estetika yang anggun, memiliki kedalaman (*d
 - **Izin Penuh Menggunakan Library**: Jika diperlukan untuk mempercantik tampilan, menyempurnakan animasi (seperti `framer-motion`, `motion`, `canvas-confetti`, `lucide-react`), atau meningkatkan kualitas estetika dan pengalaman interaktif pengguna, AI Agent **SANGAT DIANJURKAN dan DIPERSILAKAN** untuk menginstal dan menggunakan library pihak ketiga yang relevan, stabil, dan terpercaya.
 - **Kualitas & Keindahan di Atas Segalanya**: Jangan ragu memanfaatkan library animasi tingkat tinggi, sistem fisika partikel (*physics spring*), gestur sentuh, atau efek audio selama hal tersebut membuat hasil karya terasa lebih memukau, hidup (*alive*), dan profesional.
 - **Standar Kompatibilitas**: Pastikan paket library yang dipilih kompatibel dengan React 19 dan Vite, tidak menimbulkan *breaking changes*, serta lolos proses build (`npm run build`).
+
+---
+
+## 9. Fakta Kunci & Profil Personal (Momen Sakral)
+Seluruh AI Agent WAJIB mengingat fakta penting berikut dan tidak boleh salah mencantumkan data personal:
+- **Penerima / Pasangan**: **Evina Dini Anjriani** (*Evina / Bidadari*).
+- **Pengirim**: **Dika** (*Mas Dika*).
+- **Tanggal Lahir Evina**: **17 Oktober 2001**.
+- **Milestone Ulang Tahun ke-25**: **17 Oktober 2026**.
+- **Kisah & Rute Cinta**: Hubungan jarak jauh (*LDR*) dengan rute temu bulanan **Bandung ⇄ Bekasi**.
+- **Ketentuan Format Tanggal**:
+  - Tanggal surat, stempel pos, badge perayaan, dan polaroid peringatan ke-25 **WAJIB** menggunakan **`17 Oktober 2026`** (atau variasi singkatnya: `17 OKT 2026` / `17 OKTOBER`), bukan tanggal lain.
+  - Masa berlaku voucher kado berstatus **`NO-EXPIRE`** / tanpa batas waktu.
+

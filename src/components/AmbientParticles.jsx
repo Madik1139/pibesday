@@ -1,19 +1,18 @@
 import React, { useMemo } from "react";
 
 export default function AmbientParticles() {
-  // 75 partikel berkilau: Ukuran lebih besar, lebih banyak, dan jelas terlihat mengambang di seluruh layar
+  // 25 partikel berkilau (Simbolis 25 tahun): Estetik, anggun, dan sangat ringan untuk GPU
   const particles = useMemo(() => {
     const types = ["sparkle", "bokeh", "star", "heart", "glow", "bokeh"];
-    return Array.from({ length: 75 }, (_, i) => {
+    return Array.from({ length: 25 }, (_, i) => {
       const type = types[i % types.length];
-      // Ukuran lebih besar: Bokeh hingga 36px, sparkle hingga 26px
       const baseSize =
         type === "bokeh"
-          ? Math.floor(Math.random() * 20) + 16 // 16px - 36px
+          ? Math.floor(Math.random() * 16) + 16 // 16px - 32px
           : type === "sparkle"
-          ? Math.floor(Math.random() * 12) + 16 // 16px - 28px
-          : type === "star"
           ? Math.floor(Math.random() * 10) + 14 // 14px - 24px
+          : type === "star"
+          ? Math.floor(Math.random() * 8) + 12  // 12px - 20px
           : type === "heart"
           ? Math.floor(Math.random() * 8) + 12  // 12px - 20px
           : Math.floor(Math.random() * 10) + 14;
@@ -21,10 +20,10 @@ export default function AmbientParticles() {
       return {
         id: i,
         type,
-        left: `${(i * 1.33 + Math.random() * 1.5) % 96 + 2}%`,
+        left: `${(i * 3.8 + Math.random() * 2) % 94 + 3}%`,
         size: baseSize,
-        duration: Math.floor(Math.random() * 12) + 14, // 14s to 26s
-        delay: -(Math.random() * 28), // langsung tersebar di layar seketika
+        duration: Math.floor(Math.random() * 12) + 16, // 16s to 28s
+        delay: -(Math.random() * 25), // langsung tersebar di layar seketika
         opacity: Math.random() * 0.35 + 0.45, // Opacity lebih jelas terlihat (0.45 - 0.80)
         color:
           i % 5 === 0
