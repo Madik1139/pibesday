@@ -22,7 +22,7 @@ export async function sendWishToEmail(wishText) {
   const payload = {
     _subject: "🎂 [PIBESDAY 25] Evina Baru Saja Membuat Harapan & Meniup Lilin! ✨",
     nama: "Evina Dini Anjriani",
-    acara: "Ulang Tahun ke-25 (Silver Jubilee)",
+    acara: "Ulang Tahun ke-25",
     waktu: new Date().toLocaleString("id-ID", {
       dateStyle: "full",
       timeStyle: "medium",

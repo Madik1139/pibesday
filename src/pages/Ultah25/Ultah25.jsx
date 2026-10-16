@@ -3,6 +3,7 @@ import InteractiveCake from "../../components/InteractiveCake";
 import CoffeePostcard from "../../components/CoffeePostcard";
 import TwentyFiveSips from "../../components/TwentyFiveSips";
 import PolaroidWall from "../../components/PolaroidWall";
+import SpecialCinemaCard from "../../components/SpecialCinemaCard";
 import CoffeeVouchers from "../../components/CoffeeVouchers";
 import FloatingMusicPlayer from "../../components/FloatingMusicPlayer";
 import ScrollReveal from "../../components/ScrollReveal";
@@ -16,12 +17,40 @@ import {
   playPaperSlideSound,
 } from "../../utils/audio";
 import confetti from "canvas-confetti";
-import { Coffee, Sparkles, BookOpen, Heart, Mail, History } from "lucide-react";
+import { Coffee, Sparkles, BookOpen, Heart, Mail, History, Lock, Film, Volume2 } from "lucide-react";
+import EnvelopeCountdown from "../../components/EnvelopeCountdown";
+import EnvelopeLockedModal from "../../components/EnvelopeLockedModal";
+import AudioConfirmModal from "../../components/AudioConfirmModal";
+import { envelopeLockConfig } from "../../data/coffeeContent";
+
+// Target Unlock: 17 Oktober 2026 pukul 00:00:00 (Waktu Lokal)
+const TARGET_UNLOCK_TIME = new Date(
+  envelopeLockConfig.targetYear,
+  envelopeLockConfig.targetMonth,
+  envelopeLockConfig.targetDay,
+  envelopeLockConfig.targetHour,
+  envelopeLockConfig.targetMinute,
+  envelopeLockConfig.targetSecond
+).getTime();
 
 export default function Ultah25({ onGoToUltah24 }) {
+  // Cek apakah ada parameter bypass URL (?unlock=true) untuk keperluan pengujian / dev preview
+  const isUnlockBypassed =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("unlock") === "true";
+
   // envelopePhase: "closed" | "opening" | "card_popped" | "zooming" | "opened"
   const [envelopePhase, setEnvelopePhase] = useState("closed");
   const [isPlaying, setIsPlaying] = useState(false);
+
+  // Status terkunci: True jika belum jam 00:00 17 Oktober 2026 dan tidak di-bypass
+  const [isLocked, setIsLocked] = useState(() => {
+    if (isUnlockBypassed) return false;
+    return Date.now() < TARGET_UNLOCK_TIME;
+  });
+  const [isLockedModalOpen, setIsLockedModalOpen] = useState(false);
+  const [isAudioConfirmOpen, setIsAudioConfirmOpen] = useState(false);
+  const [isShaking, setIsShaking] = useState(false);
 
   // Unmount cleanup: Pastikan musik mati jika berpindah ke halaman lain
   useEffect(() => {
@@ -30,8 +59,37 @@ export default function Ultah25({ onGoToUltah24 }) {
     };
   }, []);
 
+  const handleUnlock = () => {
+    setIsLocked(false);
+    try {
+      playSparkleSound();
+    } catch {}
+    confetti({
+      particleCount: 50,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#C48B47", "#FAF0CA", "#8C5E28", "#E6CCB2"],
+    });
+  };
+
   const handleOpenEnvelope = async () => {
     if (envelopePhase !== "closed") return;
+
+    // Pengecekan Kunci Waktu: Hanya bisa dibuka tepat pukul 00:00 17 Oktober
+    if (isLocked && !isUnlockBypassed && Date.now() < TARGET_UNLOCK_TIME) {
+      setIsShaking(true);
+      setTimeout(() => setIsShaking(false), 550);
+      setIsLockedModalOpen(true);
+      return;
+    }
+
+    // Tampilkan konfirmasi audio manis agar Evina menaikkan volume sebelum amplop terbuka
+    setIsAudioConfirmOpen(true);
+  };
+
+  // Proses unboxing sinematik setelah volume dikonfirmasi siap
+  const proceedOpenEnvelope = async () => {
+    setIsAudioConfirmOpen(false);
 
     // 1. Audio init & mainkan suara segel lilin pecah
     try {
@@ -107,9 +165,9 @@ export default function Ultah25({ onGoToUltah24 }) {
   // Layar Amplop Awal (Sebelum dibuka penuh)
   if (envelopePhase !== "opened") {
     return (
-      <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#F5EBE0] via-[#E6CCB2] to-[#D4A373] p-4 select-none overflow-hidden">
+      <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#F5EBE0] via-[#E6CCB2] to-[#D4A373] p-4 select-none overflow-hidden relative">
         {/* Coffee Shop Stamp Header */}
-        <div className={`text-center mb-4 sm:mb-6 transition-opacity duration-500 ${envelopePhase === "zooming" ? "opacity-0" : "opacity-100 animate-[fadeIn_1s_ease-out]"}`}>
+        <div className={`text-center mb-2 sm:mb-3 transition-opacity duration-500 ${envelopePhase === "zooming" ? "opacity-0" : "opacity-100 animate-[fadeIn_1s_ease-out]"}`}>
           <div className="flex items-center justify-center gap-1.5 text-2xl text-[#8C5E28]">
             <Coffee className="w-6 h-6 text-[#8C5E28]" />
             <Sparkles className="w-5 h-5 text-amber-500" />
@@ -120,10 +178,17 @@ export default function Ultah25({ onGoToUltah24 }) {
           <p className="text-xs sm:text-sm text-[#6F4E37] font-body mt-0.5">
             Sebuah racikan cinta untuk hari ulang tahun Evina Dini Anjriani
           </p>
+
+          {/* Countdown Waktu Buka Amplop (00:00 17 Oktober 2026) */}
+          <EnvelopeCountdown
+            targetTime={TARGET_UNLOCK_TIME}
+            onUnlock={handleUnlock}
+            isLocked={isLocked && !isUnlockBypassed}
+          />
         </div>
 
         {/* Vintage Coffee Kraft Envelope - Cinematic 3D Unboxing */}
-        <div className={`relative envelope-wrapper-25 mt-16 sm:mt-20 mb-6 ${envelopePhase === "zooming" ? "zoom-transition" : ""}`}>
+        <div className={`relative envelope-wrapper-25 mt-12 sm:mt-16 mb-4 ${envelopePhase === "zooming" ? "zoom-transition" : ""} ${isShaking ? "animate-shake" : ""}`}>
           <div
             onClick={handleOpenEnvelope}
             className={`envelope-coffee-25 relative rounded-2xl cursor-pointer ${
@@ -207,10 +272,23 @@ export default function Ultah25({ onGoToUltah24 }) {
                     e.stopPropagation();
                     handleOpenEnvelope();
                   }}
-                  className="relative z-30 mb-3.5 min-h-[44px] px-6 py-2.5 rounded-full bg-gradient-to-r from-[#8C5E28] via-[#C48B47] to-[#8C5E28] text-white font-semibold text-xs sm:text-[13px] shadow-[0_4px_14px_rgba(140,94,40,0.35)] hover:shadow-[0_6px_20px_rgba(140,94,40,0.45)] hover:brightness-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer select-none animate-pulse"
+                  className={`relative z-30 mb-3.5 min-h-[44px] px-6 py-2.5 rounded-full font-semibold text-xs sm:text-[13px] active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer select-none ${
+                    isLocked && !isUnlockBypassed
+                      ? "bg-gradient-to-r from-[#5C3D28] via-[#7A4B2A] to-[#5C3D28] text-amber-100 shadow-[0_4px_14px_rgba(44,24,16,0.3)] hover:brightness-110"
+                      : "bg-gradient-to-r from-[#8C5E28] via-[#C48B47] to-[#8C5E28] text-white shadow-[0_4px_14px_rgba(140,94,40,0.35)] hover:shadow-[0_6px_20px_rgba(140,94,40,0.45)] hover:brightness-105 animate-pulse"
+                  }`}
                 >
-                  <Mail className="w-4 h-4 text-amber-100" />
-                  <span>Buka Amplop</span>
+                  {isLocked && !isUnlockBypassed ? (
+                    <>
+                      <Lock className="w-4 h-4 text-amber-300" />
+                      <span>{envelopeLockConfig.buttonLocked}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Mail className="w-4 h-4 text-amber-100" />
+                      <span>{envelopeLockConfig.buttonUnlocked}</span>
+                    </>
+                  )}
                 </button>
               )}
             </div>
@@ -221,14 +299,44 @@ export default function Ultah25({ onGoToUltah24 }) {
             {/* 5. Segel Lilin Emas Estetik di Ujung Flap (Wax Seal 25) */}
             <div className="wax-seal-seal absolute top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-gradient-to-br from-[#E5AD58] via-[#C48B47] to-[#8C5E28] border-2 border-[#FAF0CA] shadow-[0_4px_10px_rgba(44,24,16,0.3)] flex items-center justify-center pointer-events-none">
               <div className="absolute inset-1 rounded-full border border-amber-100/50 border-dashed" />
-              <span className="font-serif-title text-white font-bold text-base tracking-wider drop-shadow-xs">25</span>
+              {isLocked && !isUnlockBypassed ? (
+                <div className="flex flex-col items-center">
+                  <Lock className="w-3.5 h-3.5 text-white/90 mb-0.5" />
+                  <span className="font-serif-title text-white font-bold text-[10px] tracking-tight leading-none">25</span>
+                </div>
+              ) : (
+                <span className="font-serif-title text-white font-bold text-base tracking-wider drop-shadow-xs">25</span>
+              )}
             </div>
           </div>
         </div>
 
-        <p className={`text-xs text-[#6F4E37]/80 mt-6 tracking-wide text-center transition-opacity duration-300 ${envelopePhase !== "closed" ? "opacity-0" : "opacity-100"}`}>
-          Ketuk tombol di atas atau sentuh amplop untuk membuka perayaan spesialmu ✨
+        {/* Info Audio: Naikkan Volume Suara */}
+        <div className={`mt-3 sm:mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFDF9]/95 border border-amber-300/70 shadow-xs text-[#7A4B2A] text-xs font-medium tracking-wide transition-opacity duration-300 ${envelopePhase !== "closed" ? "opacity-0" : "opacity-100"}`}>
+          <Volume2 className="w-4 h-4 text-amber-600 animate-pulse" />
+          <span>Naikkan volume suaramu sebelum membuka amplop yaa 🎧✨</span>
+        </div>
+
+        {/* Teks Instruksi Bawah */}
+        <p className={`text-xs text-[#6F4E37]/80 mt-2 max-w-sm tracking-wide text-center transition-opacity duration-300 ${envelopePhase !== "closed" ? "opacity-0" : "opacity-100"}`}>
+          {isLocked && !isUnlockBypassed
+            ? "Amplop ini tersegel rapat hingga 17 Oktober 2026 pukul 00:00 WIB ✨ Ketuk amplop untuk melihat pesan."
+            : "Ketuk tombol di atas atau sentuh amplop untuk membuka perayaan spesialmu ✨"}
         </p>
+
+        {/* Modal Romantis Saat Amplop Terkunci Diketuk */}
+        <EnvelopeLockedModal
+          isOpen={isLockedModalOpen}
+          onClose={() => setIsLockedModalOpen(false)}
+          targetTime={TARGET_UNLOCK_TIME}
+        />
+
+        {/* Modal Konfirmasi Audio Sebelum Buka Amplop */}
+        <AudioConfirmModal
+          isOpen={isAudioConfirmOpen}
+          onClose={() => setIsAudioConfirmOpen(false)}
+          onConfirm={proceedOpenEnvelope}
+        />
       </div>
     );
   }
@@ -244,7 +352,7 @@ export default function Ultah25({ onGoToUltah24 }) {
         <header className="w-full text-center pt-4 pb-12 sm:pb-16 md:pb-20 flex flex-col items-center">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-100/90 text-[#8C5E28] text-[11px] font-bold uppercase tracking-widest mb-3 border border-amber-300/50 shadow-xs">
             <Coffee className="w-3.5 h-3.5 text-[#8C5E28]" />
-            <span>Silver Jubilee • 25th Birthday</span>
+            <span>Momen Spesial • 25th Birthday</span>
           </div>
 
           <h1 className="font-serif-title text-[32px] sm:text-[44px] md:text-[52px] font-bold text-[#2C1810] leading-tight px-2 tracking-tight">
@@ -334,6 +442,22 @@ export default function Ultah25({ onGoToUltah24 }) {
         <ScrollReveal direction="scale" duration={800} className="w-full flex justify-center">
           <PolaroidWall />
         </ScrollReveal>
+
+        {/* Divider Alur Lembut Antar Bab */}
+        <ScrollReveal direction="fade" duration={600} className="w-full">
+          <div className="w-full max-w-xl mx-auto py-8 sm:py-12 md:py-16 flex items-center justify-center gap-3 select-none">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-amber-300/40 to-amber-300/10" />
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100/60 border border-amber-200/50 text-[#8C5E28] text-[10px] font-mono tracking-widest uppercase">
+              <Film className="w-3 h-3 text-[#8C5E28]" />
+              <span>Moving Moments</span>
+              <Film className="w-3 h-3 text-[#8C5E28]" />
+            </div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-amber-300/40 to-amber-300/10" />
+          </div>
+        </ScrollReveal>
+
+        {/* Panggung Khusus: 🎬 Rekaman Video Kenangan (Special Cinema Card) */}
+        <SpecialCinemaCard />
 
         {/* Divider Alur Lembut Antar Bab */}
         <ScrollReveal direction="fade" duration={600} className="w-full">

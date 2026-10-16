@@ -187,7 +187,7 @@ export const polaroidMemories = [
   {
     id: 2,
     category: "solo",
-    src: "/img 25/foto 4.jpeg",
+    src: "/img 25/foto 5.jpeg",
     caption: "Senyum Penyejuk Jiwa",
     tag: "Senyum Favorit",
     backNote: "Senyum manismu selalu jadi obat paling mujarab untuk meredakan segala penat dan lelah setelah hari yang panjang."
@@ -195,7 +195,7 @@ export const polaroidMemories = [
   {
     id: 3,
     category: "solo",
-    src: "/img 25/foto 5.jpeg",
+    src: "/img 25/foto 4.jpeg",
     caption: "Keanggunan yang Tenang",
     tag: "Pesona Evina",
     backNote: "Ada ketenangan luar biasa yang selalu terpancar darimu. Bersyukur banget bisa punya bidadari seanggun kamu di hidupku."
@@ -229,7 +229,7 @@ export const polaroidMemories = [
     category: "solo",
     src: "/img 25/foto 12.jpeg",
     caption: "Pesona Babak Usia 25",
-    tag: "Silver Jubilee",
+    tag: "Pesona Usia 25",
     backNote: "Resmi menginjak usia 25 tahun, makin anggun, makin bijak, dan rasa sayangku ke kamu pun tumbuh makin dalam setiap detiknya."
   },
   {
@@ -271,7 +271,7 @@ export const polaroidMemories = [
     category: "grid",
     src: "/img 25/foto 10.jpeg",
     caption: "Ragam Ekspresi Favorit",
-    tag: "Photo Booth",
+    tag: "Kolase Kamera HP",
     backNote: "Setiap frame foto punya ceritanya sendiri. Bukti nyata kalau kamu adalah wanita paling imut dan ekspresif sedunia!"
   },
 
@@ -573,4 +573,30 @@ export const wishNotificationConfig = {
   recipientEmail: "emienda84@gmail.com",
   service: "formsubmit", // Menggunakan FormSubmit.co (Gratis, tanpa API key)
   web3formsAccessKey: "", // Opsional (jika ingin menggunakan Web3Forms)
+};
+
+// Konfigurasi Kunci Amplop Perayaan Ulang Tahun ke-25 (Buka tepat 17 Oktober 2026 pukul 00:00 WIB)
+export const envelopeLockConfig = {
+  // Target: 17 Oktober 2026 pukul 00:00:00 WIB
+  targetDateISO: "2026-10-17T00:00:00+07:00",
+  // Target tahun, bulan (0-indexed: 9 = Oktober), tanggal, jam, menit, detik (waktu lokal)
+  targetYear: 2026,
+  targetMonth: 9, // Oktober (0 = Januari, 9 = Oktober)
+  targetDay: 17,
+  targetHour: 0,
+  targetMinute: 0,
+  targetSecond: 0,
+  badgeLocked: "DISEGEL HINGGA 17 OKTOBER 2026 • 00:00 WIB",
+  badgeUnlocked: "HARI BAHAGIA TELAH TIBA • SILAKAN BUKA AMPLOPMU ✨",
+  buttonLocked: "Terkunci (Buka 00:00 WIB)",
+  buttonUnlocked: "Buka Amplop Sekarang ✨",
+  lockedNotice: "Amplop ini disegel rapat dengan penuh cinta... Baru bisa dibuka tepat saat pergantian hari di hari ulang tahunmu, 17 Oktober 2026 pukul 00:00 WIB ✨",
+  modalTitle: "Belum Waktunya, Sayang... 🤫💖",
+  modalSubtitle: "Surat & Perayaan Ulang Tahun ke-25 Masih Disegel Rapat",
+  modalParagraphs: [
+    "Sabar dulu yaa bidadariku tercinta...",
+    "Mas Dika meracik surat dan kejutan spesial ini khusus untuk menyambut detik-detik hari bahagiamu tepat saat jam berdentang 00:00 WIB.",
+    "Tunggu sebentar lagi ya sayang, hitungan mundurnya sudah berjalan di bawah ini 🥰"
+  ],
+  modalCloseText: "Siap Menunggu dengan Sabar 🥰"
 };
